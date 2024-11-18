@@ -1,0 +1,34 @@
+Warning: Design 'Top' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : area
+Design : Top
+Version: V-2023.12-SP4
+Date   : Thu Aug 29 03:19:15 2024
+****************************************
+
+Library(s) Used:
+
+    saed14rvt_tt0p8v25c (File: /home/summer/library/SAED/14/stdcell_rvt/db_ccs/saed14rvt_tt0p8v25c.db)
+    saed14io_fc_tt0p8v25c_1p8v (File: /home/summer/library/SAED/14/io/lib/io_std/db_ccs/saed14io_fc_tt0p8v25c_1p8v.db)
+
+Number of ports:                         1708
+Number of nets:                          9012
+Number of cells:                         7181
+Number of combinational cells:           6069
+Number of sequential cells:              1090
+Number of macros/black boxes:               0
+Number of buf/inv:                       1484
+Number of references:                      18
+
+Combinational area:               2101.452031
+Buf/Inv area:                      390.187206
+Noncombinational area:          161129.003238
+Macro/Black Box area:                0.000000
+Net Interconnect area:          355959.108252
+
+Total cell area:                163230.455268
+Total area:                     519189.563520
+
+Information: This design contains black box (unknown) components. (RPT-8)
+1

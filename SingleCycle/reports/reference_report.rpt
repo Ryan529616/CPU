@@ -1,0 +1,55 @@
+Warning: Design 'Top' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+ 
+****************************************
+Report : reference
+Design : Top
+Version: V-2023.12-SP4
+Date   : Thu Aug 29 03:19:21 2024
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+ALU                             487.733998       1    487.733998  h
+ALU_Src_MUX                      19.935601       1     19.935601  h
+Branch_Unit                     114.463197       1    114.463197  h
+Controller                       19.758000       1     19.758000  h
+Data_Memory                       0.000000       1      0.000000  b, h
+Decoder                           0.000000       1      0.000000  h
+Imme_Ext                         19.402800       1     19.402800  h
+Instruction_Memory            160000.488400
+                                                 1  160000.488400 b, h, n
+LD_Filter                        13.941600       1     13.941600  h
+RegFile                        2488.042871       1   2488.042871  h, n
+RegWrite_MUX                     27.439201       1     27.439201  h
+Reg_PC                           35.209201       1     35.209201  h, n
+SAEDRVT14_BUF_1P5  saed14rvt_tt0p8v25c
+                                  0.310800       1      0.310800  
+SAEDRVT14_BUF_ECO_1
+                   saed14rvt_tt0p8v25c
+                                  0.266400       1      0.266400  
+SAEDRVT14_BUF_PECO_2
+                   saed14rvt_tt0p8v25c
+                                  0.488400       1      0.488400  
+SAEDRVT14_BUF_U_0P5
+                   saed14rvt_tt0p8v25c
+                                  0.266400       1      0.266400  
+SAEDRVT14_CLKSPLT_8
+                   saed14rvt_tt0p8v25c
+                                  1.642800       1      1.642800  
+SAEDRVT14_INV_PECO_1
+                   saed14rvt_tt0p8v25c
+                                  0.355200       3      1.065600  
+-----------------------------------------------------------------------------
+Total 18 references                                 163230.455268
+1
