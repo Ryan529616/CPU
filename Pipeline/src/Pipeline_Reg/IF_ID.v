@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 module IF_ID(
     input             clk,
     input      [31:0] pc,
@@ -10,4 +11,18 @@ module IF_ID(
         instruction_out <= instruction;
     end
 
+=======
+module IF_ID(
+    input             clk,
+    input      [31:0] pc,
+    input      [31:0] instruction,
+    output reg [31:0] pc_out,
+    output reg [31:0] instruction_out
+);
+    always@(posedge clk)begin
+        pc_out <= pc;
+        instruction_out <= instruction;
+    end
+
+>>>>>>> bdb7ead (2024/12/8)
 endmodule

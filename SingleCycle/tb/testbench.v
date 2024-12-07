@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+<<<<<<< HEAD
 `include "../src/Top.v"
 module CPU_Testbench;
 
@@ -99,4 +100,99 @@ module CPU_Testbench;
     end
 
     
+=======
+`include "Imme_Ext.v"
+`include "defines.v"
+
+module Imme_Ext_Testbench;
+
+    reg [31:0] instruction;
+    wire [31:0] imm;
+
+    Imme_Ext uut (
+        .instruction(instruction),
+        .imm(imm)
+    );
+
+    initial begin
+        $display("Testing Immediate Extension...");
+
+        // 測試 LUI 指令
+        instruction = {20'h12345, 5'b0, 7'b0110111}; // rd = 0
+        #10;
+        if (imm !== 32'h12345000)
+            $display("ERROR: LUI failed! Got: %h, Expected: 12345000", imm);
+        else
+            $display("PASS: LUI");
+
+        // 測試 AUIPC 指令
+        instruction = {20'h12345, 5'b0, 7'b0010111}; // AUIPC 指令格式
+        #10;
+        if (imm !== 32'h12345000)
+            $display("ERROR: AUIPC failed! Got: %h, Expected: 12345000", imm);
+        else
+            $display("PASS: AUIPC");
+
+        // 測試 JAL 指令
+        instruction = {1'b1, 10'b1111111110, 1'b1, 8'hFF, 5'b0, 7'b1101111}; // rd = 0
+        #10;
+        if (imm !== 32'hFFFFFFFC)
+            $display("ERROR: JAL failed! Got: %h, Expected: FFFFFFFC", imm);
+        else
+            $display("PASS: JAL");
+
+        // 測試 JALR 指令
+        instruction = {12'hFFF, 5'b0, 3'b0, 5'b0, 7'b1100111}; // rs1 = 0, rd = 0
+        #10;
+        if (imm !== 32'hFFFFFFFE)
+            $display("ERROR: JALR failed! Got: %h, Expected: FFFFFFFE", imm);
+        else
+            $display("PASS: JALR");
+
+        // 測試 Branch 指令 (BEQ, offset = -8)
+        instruction = {1'b1, 6'b111111, 5'b0, 5'b0, 3'b0, 4'b1111, 1'b1, 7'b1100011}; // BEQ
+        #10;
+        if (imm !== 32'hFFFFFFFE)
+            $display("ERROR: Branch failed! Got: %h, Expected: FFFFFFFE", imm);
+        else
+            $display("PASS: Branch");
+
+        // 測試 Load 指令 (LB, offset = 0x7F)
+        instruction = {12'h07F, 5'b0, 3'b0, 5'b0, 7'b0000011}; // rs1 = 0, rd = 0
+
+        #10;
+        if (imm !== 32'h0000007F)
+            $display("ERROR: Load failed! Got: %h, Expected: 0000007F", imm);
+        else
+            $display("PASS: Load");
+
+        // 測試 Store 指令 (SB, offset = -128)
+        instruction = {7'b1111111, 10'b0, 3'b000, 5'b0, 7'b0100011}; // Store 指令格式
+        #10;
+        if (imm !== 32'hFFFFFFE0)
+            $display("ERROR: Store failed! Got: %h, Expected: FFFFFFE0", imm);
+        else
+            $display("PASS: Store");
+
+        // 測試 I-type 指令 (ADDI, imm = 0x123)
+        instruction = {12'h123, 5'b0, 3'b000, 5'b0, 7'b0010011}; // ADDI 指令格式
+        #10;
+        if (imm !== 32'h00000123)
+            $display("ERROR: I-type failed! Got: %h, Expected: 00000123", imm);
+        else
+            $display("PASS: I-type");
+
+        // 測試負數立即數擴展 (I-type, imm = -1)
+        instruction = {12'hFFF, 5'b0, 3'b000, 5'b0, 7'b0010011}; // ADDI x, x, -1
+        #10;
+        if (imm !== 32'hFFFFFFFF)
+            $display("ERROR: I-type negative failed! Got: %h, Expected: FFFFFFFF", imm);
+        else
+            $display("PASS: I-type negative");
+
+        $display("Testing Complete.");
+        $finish;
+    end
+
+>>>>>>> bdb7ead (2024/12/8)
 endmodule

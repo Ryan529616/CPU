@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 Warning: Design 'Top' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
 Information: Updating design information... (UID-85)
 Warning: Design 'Top' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+=======
+>>>>>>> bdb7ead (2024/12/8)
  
 ****************************************
 Report : timing
@@ -8,12 +11,18 @@ Report : timing
         -delay max
         -max_paths 1
 Design : Top
+<<<<<<< HEAD
 Version: V-2023.12-SP4
 Date   : Thu Aug 29 03:19:15 2024
+=======
+Version: W-2024.09
+Date   : Tue Dec  3 09:42:24 2024
+>>>>>>> bdb7ead (2024/12/8)
 ****************************************
 
  # A fanout number of 1000 was used for high fanout net computations.
 
+<<<<<<< HEAD
 Operating Conditions: tt0p8v25c   Library: saed14rvt_tt0p8v25c
 Wire Load Model Mode: top
 
@@ -21,11 +30,21 @@ Wire Load Model Mode: top
               (rising edge-triggered flip-flop clocked by clk)
   Endpoint: PC/pc_reg[31]
             (rising edge-triggered flip-flop clocked by clk)
+=======
+Operating Conditions: ss0p6vm40c   Library: saed14rvt_ss0p6vm40c
+Wire Load Model Mode: top
+
+  Startpoint: instruction[18]
+              (input port clocked by clk)
+  Endpoint: rd_data[31]
+            (output port clocked by clk)
+>>>>>>> bdb7ead (2024/12/8)
   Path Group: clk
   Path Type: max
 
   Des/Clust/Port     Wire Load Model       Library
   ------------------------------------------------
+<<<<<<< HEAD
   Top                tc8000                saed14rvt_tt0p8v25c
 
   Point                                                   Incr       Path
@@ -84,6 +103,104 @@ Wire Load Model Mode: top
   data arrival time                                                 -1.03
   --------------------------------------------------------------------------
   slack (MET)                                                        0.00
+=======
+  Top                8000                  saed14rvt_tt0p8v125c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     0.05       0.05 r
+  instruction[18] (in)                     0.00       0.05 r
+  U4603/X (SAEDRVT14_NR2_1)                0.02       0.07 f
+  U4614/X (SAEDRVT14_ND2_CDC_0P5)          0.02       0.08 r
+  U823/X (SAEDRVT14_NR2_2)                 0.03       0.12 f
+  U4615/X (SAEDRVT14_INV_0P5)              0.04       0.15 r
+  U4138/X (SAEDRVT14_NR2_1)                0.02       0.17 f
+  U3777/X (SAEDRVT14_NR2_1)                0.01       0.18 r
+  U3102/X (SAEDRVT14_ND2_CDC_0P5)          0.01       0.20 f
+  U3021/X (SAEDRVT14_ND3B_0P5)             0.03       0.22 f
+  U2948/X (SAEDRVT14_NR2_1)                0.01       0.23 r
+  U4450/X (SAEDRVT14_ND3_0P5)              0.03       0.26 f
+  U1089/X (SAEDRVT14_NR2_1)                0.02       0.28 r
+  U396/X (SAEDRVT14_OAI22_0P5)             0.02       0.30 f
+  U493/X (SAEDRVT14_ND2_CDC_0P5)           0.02       0.31 r
+  U7331/X (SAEDRVT14_NR2_1)                0.01       0.33 f
+  U665/X (SAEDRVT14_ND2_CDC_0P5)           0.01       0.34 r
+  U792/X (SAEDRVT14_OAI22_0P5)             0.02       0.36 f
+  U796/X (SAEDRVT14_AO221_0P5)             0.03       0.39 f
+  U4443/X (SAEDRVT14_INV_0P5)              0.01       0.40 r
+  U4442/X (SAEDRVT14_OAI211_0P5)           0.03       0.42 f
+  U4444/X (SAEDRVT14_AO21B_0P5)            0.02       0.44 f
+  U4514/X (SAEDRVT14_AO21B_0P5)            0.02       0.46 f
+  U5376/X (SAEDRVT14_NR2_1)                0.01       0.48 r
+  U676/X (SAEDRVT14_ND2_CDC_0P5)           0.01       0.49 f
+  U803/X (SAEDRVT14_OA2BB2_V1_1)           0.02       0.51 f
+  U4458/X (SAEDRVT14_INV_0P5)              0.01       0.52 r
+  U2644/X (SAEDRVT14_OA31_1)               0.02       0.54 r
+  U2639/X (SAEDRVT14_AOI21_0P75)           0.01       0.55 f
+  U2637/X (SAEDRVT14_INV_0P5)              0.02       0.57 r
+  U5632/CKOUTB (SAEDRVT14_CLKSPLT_8)       0.07       0.64 f
+  U458/X (SAEDRVT14_OAI22_0P5)             0.03       0.67 r
+  U2617/X (SAEDRVT14_INV_0P5)              0.01       0.68 f
+  U5213/X (SAEDRVT14_ND2_CDC_0P5)          0.01       0.70 r
+  U5214/X (SAEDRVT14_OA21_1)               0.02       0.72 r
+  U5215/X (SAEDRVT14_ND2_CDC_0P5)          0.02       0.73 f
+  U1045/X (SAEDRVT14_INV_0P5)              0.01       0.74 r
+  U4452/X (SAEDRVT14_NR2_1)                0.01       0.75 f
+  U1042/X (SAEDRVT14_ND3B_0P5)             0.03       0.78 f
+  U4429/X (SAEDRVT14_NR3B_0P75)            0.02       0.80 r
+  U2533/X (SAEDRVT14_NR2_1)                0.01       0.81 f
+  U400/X (SAEDRVT14_OAI22_0P5)             0.02       0.83 r
+  U1033/X (SAEDRVT14_NR2_1)                0.01       0.84 f
+  U4457/X (SAEDRVT14_NR3B_0P75)            0.02       0.87 r
+  U2487/X (SAEDRVT14_MUX2_U_0P5)           0.02       0.88 r
+  U2485/X (SAEDRVT14_ND2_CDC_0P5)          0.01       0.90 f
+  U6328/X (SAEDRVT14_NR2_1)                0.01       0.91 r
+  U860/X (SAEDRVT14_NR2_MM_1)              0.02       0.93 f
+  U461/X (SAEDRVT14_OAI22_0P5)             0.03       0.95 r
+  U1021/X (SAEDRVT14_AO2BB2_1)             0.03       0.98 r
+  U2462/X (SAEDRVT14_OAI21_0P5)            0.02       0.99 f
+  U2433/X (SAEDRVT14_OR2_MM_0P5)           0.02       1.01 f
+  U857/X (SAEDRVT14_ND2_CDC_0P5)           0.02       1.03 r
+  U4421/X (SAEDRVT14_ND3B_0P5)             0.02       1.05 f
+  U1495/X (SAEDRVT14_ND2_CDC_0P5)          0.01       1.07 r
+  U4456/X (SAEDRVT14_AOI21_0P75)           0.01       1.08 f
+  U2396/X (SAEDRVT14_NR2_1)                0.01       1.09 r
+  U7330/X (SAEDRVT14_NR2_1)                0.01       1.10 f
+  U672/X (SAEDRVT14_OAI21_0P5)             0.01       1.11 r
+  U1013/X (SAEDRVT14_AOI21_0P75)           0.02       1.13 f
+  U5649/X (SAEDRVT14_OAI21_0P5)            0.03       1.16 r
+  U5650/X (SAEDRVT14_INV_0P5)              0.02       1.18 f
+  U6024/X (SAEDRVT14_OAI22_0P5)            0.02       1.20 r
+  U1487/X (SAEDRVT14_ND2_CDC_0P5)          0.02       1.22 f
+  U1006/X (SAEDRVT14_ND2_CDC_0P5)          0.01       1.24 r
+  U4441/X (SAEDRVT14_OAI21_0P5)            0.01       1.25 f
+  U6228/X (SAEDRVT14_NR2_1)                0.01       1.26 r
+  U4433/X (SAEDRVT14_NR2_1)                0.02       1.28 f
+  U2213/X (SAEDRVT14_AO21_U_0P5)           0.02       1.29 f
+  U1473/X (SAEDRVT14_OR2_MM_0P5)           0.02       1.31 f
+  U863/X (SAEDRVT14_INV_0P5)               0.01       1.33 r
+  U2193/X (SAEDRVT14_EO2_V1_0P75)          0.03       1.35 r
+  U999/X (SAEDRVT14_ND2_CDC_0P5)           0.02       1.37 f
+  U7287/X (SAEDRVT14_OAI21_0P5)            0.01       1.38 r
+  U7291/X (SAEDRVT14_EO2_V1_0P75)          0.02       1.41 r
+  U7294/X (SAEDRVT14_OAI21_0P5)            0.01       1.42 f
+  U2175/X (SAEDRVT14_OR3_0P5)              0.02       1.44 f
+  rd_data[31] (out)                        0.00       1.44 f
+  data arrival time                                   1.44
+
+  clock clk (rise edge)                    1.50       1.50
+  clock network delay (ideal)              0.00       1.50
+  clock uncertainty                       -0.01       1.49
+  output external delay                   -0.05       1.44
+  data required time                                  1.44
+  -----------------------------------------------------------
+  data required time                                  1.44
+  data arrival time                                  -1.44
+  -----------------------------------------------------------
+  slack (MET)                                         0.00
+>>>>>>> bdb7ead (2024/12/8)
 
 
 1

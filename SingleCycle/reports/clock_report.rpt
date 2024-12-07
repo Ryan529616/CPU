@@ -1,10 +1,18 @@
+<<<<<<< HEAD
 Warning: Design 'Top' has '2' unresolved references. For more detailed information, use the "link" command. (UID-341)
+=======
+>>>>>>> bdb7ead (2024/12/8)
  
 ****************************************
 Report : clocks
 Design : Top
+<<<<<<< HEAD
 Version: V-2023.12-SP4
 Date   : Thu Aug 29 03:19:21 2024
+=======
+Version: W-2024.09
+Date   : Tue Dec  3 09:42:25 2024
+>>>>>>> bdb7ead (2024/12/8)
 ****************************************
 
 Attributes:
@@ -16,6 +24,10 @@ Attributes:
 
 Clock          Period   Waveform            Attrs     Sources
 --------------------------------------------------------------------------------
+<<<<<<< HEAD
 clk              1.00   {0 0.5}             d         {clk}
+=======
+clk             1.500   {0 0.75}            d f       {clk}
+>>>>>>> bdb7ead (2024/12/8)
 --------------------------------------------------------------------------------
 1
