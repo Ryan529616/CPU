@@ -1,5 +1,4 @@
-`timescale 1ns/1ps
-`include "defines.v"
+`include "../defines.v"
 
 module Imme_Ext(
     input      [31:0]  instruction,

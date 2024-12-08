@@ -1,9 +1,7 @@
-`timescale 1ns/1ps
-
 module Reg_PC (
     input               clk,
     input               rst,
-    input       [31:0]  next_pc,
+    input           [31:0]  next_pc,
     output reg  [31:0]  pc
 );
     reg init_done;

@@ -1,5 +1,4 @@
-`timescale 1ns/1ps
-`include "defines.v"
+`include "../defines.v"
 
 module Controller(
     input       [6:0]   opcode,
@@ -10,8 +9,7 @@ module Controller(
     output reg          MemtoReg,
     output reg  [1:0]   MemWrite,
     output reg          ALUSrc,
-    output reg          RegWrite,
-    output reg          Branch,
+    output reg          RegWrite
 );
 
     always@*begin
@@ -28,8 +26,6 @@ module Controller(
             default:{Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,Branch} = 6'b010000;
         endcase
     end
-
-    
 
     always@*begin
         if(opcode == `STORE)begin
