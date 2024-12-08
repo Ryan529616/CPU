@@ -2,15 +2,15 @@
 `ifndef DEFINES_V
 `define DEFINES_V
 
-`define LUI     7'b0110111
-`define AUIPC   7'b0010111
-`define JAL     7'b1101111
-`define JALR    7'b1100111
-`define BRANCH  7'b1100011
-`define LOAD    7'b0000011
-`define STORE   7'b0100011 
-`define OP_IMM  7'b0010011
-`define OP      7'b0110011
+`define LUI         7'b0110111
+`define AUIPC    7'b0010111
+`define JAL          7'b1101111
+`define JALR        7'b1100111
+`define BRANCH 7'b1100011
+`define LOAD      7'b0000011
+`define STORE     7'b0100011 
+`define OP_IMM 7'b0010011
+`define OP           7'b0110011
 
 `define IDLE    5'b00000
 `define ADD     5'b00001
@@ -23,12 +23,6 @@
 `define SRA     5'b01000
 `define OR      5'b01001
 `define AND     5'b01010
-`define BEQ     5'b01011
-`define BNE     5'b01100
-`define BLT     5'b01101
-`define BGE     5'b01110
-`define BLTU    5'b01111
-`define BGEU    5'b10000
 `define LUI_ALUOP 5'b10001
 
 `define WRITE_IDLE  2'b00
