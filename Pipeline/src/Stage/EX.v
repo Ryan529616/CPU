@@ -44,7 +44,11 @@ module EX (
     output        ALUSrc_out,
     output        RegWrite_out,
     output        PCSrc_out,
-    output  [4:0] ALUOp_out
+    output  [4:0] ALUOp_out,
+
+    //csr
+    input   [31:0] csr_rd;
+    output  [31:0] csr_wd;
 
 );
     wire ALU_in2;
@@ -63,5 +67,18 @@ module EX (
         .rd_data(rd_data), 
         .Branch_ALU(Branch_ALU)
     );
+
+    //csr logit
+    always@(*) begin
+        case (funct3_in)
+			`CSRRW: csr_wd = rs1;
+			`CSRRS: csr_wd = csr_rd | rs1;
+			`CSRRC: csr_wd = csr_rd & ~rs1;
+			`CSRRWI: csr_wd = {27'b0, rs1[4:0]};
+			`CSRRSI: csr_wd = csr_rd | {27'b0, rs1[4:0]};
+			`CSRRCI: csr_wd = csr_rd & ~{27'b0, rs1[4:0]};
+			default: csr_wd = 32'b0;
+		endcase
+    end
 
 endmodule

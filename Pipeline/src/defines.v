@@ -46,5 +46,23 @@
 `define SH 3'b001
 `define SW 3'b010
 
+// CSR
+`define CSR      7'b1110011
+`define CYCLEL   12'hc00
+`define CYCLEH   12'hc80
+`define MTVEC    12'h305
+`define MCAUSE   12'h342
+`define MEPC     12'h341
+`define MIE      12'h304
+`define MSTATUS  12'h300
+`define MSCRATCH 12'h340
+
+`define CSRRW  3'b000;
+`define CSRRS  3'b010;
+`define CSRRC  3'b011;
+`define CSRRWI 3'b101;
+`define CSRRSI 3'b110;
+`define CSRRCI 3'b111;
+
 `endif
 
