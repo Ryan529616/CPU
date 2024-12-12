@@ -84,8 +84,8 @@ module CSR (
         // CSR read operation for ID stage
     always @(*) begin
         case (csr_ra_id)
-            `CYCLEL:   csr_rd = cycles[31:0];
-            `CYCLEH:   csr_rd = cycles[63:32];
+            // `CYCLEL:   csr_rd = cycles[31:0];
+            // `CYCLEH:   csr_rd = cycles[63:32];
             `MTVEC:    csr_rd = mtvec;
             `MCAUSE:   csr_rd = mcause;
             `MEPC:     csr_rd = mepc;
