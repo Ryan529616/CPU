@@ -64,5 +64,9 @@
 `define CSRRSI 3'b110;
 `define CSRRCI 3'b111;
 
+`define ECALL  32'h73;
+`define EBREAK 32'h00100073;
+`define MRET   32'h30200073;
+
 `endif
 
