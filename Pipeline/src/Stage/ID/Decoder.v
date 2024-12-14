@@ -11,7 +11,7 @@ module Decoder(
     output reg          Branch,
     output reg          MemREAD,
     output reg          MemtoReg,
-    output reg  [1:0]   MemWrite,
+    output reg  [1:0]  MemWrite,
     output reg          ALUSrc,
     output reg          RegWrite,
     output reg          csr_we_id2ex,
@@ -25,11 +25,6 @@ module Decoder(
     assign rs2        = instruction[24:20];
     assign funct7  = instruction[31:25];
 
-    assign csr_addr = instruction[31:20];
-    assign csr_we_id2ex = (opcode == `CSR) && (
-        func3 == `CSRRW || func3 == `CSRRWI ||
-        func3 == `CSRRS || func3 == `CSRRSI ||
-        func3 == `CSRRC || func3 == `CSRRCI );
 
     always@*begin
         case(opcode)
