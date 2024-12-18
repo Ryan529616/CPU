@@ -77,7 +77,7 @@ module CPU_Testbench;
 
         // 顯示排序前的數據
         $display("Initial Array:");
-        for (int i = 0; i < 3; i++) begin
+        for (int i = 0; i < 10; i++) begin
             $display("Index %0d: %0d", i, get_memory(ARRAY_OFFSET + i * 4)); // 將位址按字節對齊
         end
 
@@ -89,7 +89,7 @@ module CPU_Testbench;
 
         // 顯示排序後的數據
         $display("Sorted Array:");
-        for (int i = 0; i < 3; i++) begin
+        for (int i = 0; i < 10; i++) begin
             $display("Index %0d: %0d", i, get_memory(ARRAY_OFFSET + i * 4)); // 將位址按字節對齊
         end
         #50 $finish;
