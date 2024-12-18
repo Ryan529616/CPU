@@ -1,13 +1,11 @@
-`timescale 1ns/1ps
-
 module RegWrite_MUX (
     input           MemtoReg,
-    input           PCSrc,
+    input    [6:0]  opcode,
     input   [31:0]  pc2reg,
     input   [31:0]  ALU_result,
     input   [31:0]  Read_data,
     output  [31:0]  Write_data
 );
-    assign Write_data = (PCSrc) ? pc2reg : (MemtoReg) ? Read_data : ALU_result;
+    assign Write_data = (opcode==`AUIPC||opcode==`JAL||opcode==`JALR) ? pc2reg : (MemtoReg) ? Read_data : ALU_result;
     
 endmodule

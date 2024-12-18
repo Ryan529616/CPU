@@ -1,12 +1,10 @@
-`timescale 1ns/1ps
 `include "defines.v"
-
 
 `ifndef SRAM_V
 `define SRAM_V
 module Sram(
     input               clk,
-    input               MemREAD,
+    input               MemRead,
     input       [1:0]   MemWrite,
     input       [31:0]  address,
     input       [31:0]  write_data,
@@ -34,11 +32,13 @@ module Sram(
             end
         endcase
     end
-    always@* begin
-        read_data[7:0] = mem[address];
-        read_data[15:8] = mem[address+1];
-        read_data[23:16] = mem[address+2];
-        read_data[31:24] = mem[address+3];
+    always @* begin
+        if (MemRead) begin
+            read_data = {mem[address + 3], mem[address + 2], mem[address + 1], mem[address]};
+        end else begin
+            read_data = 32'bz;
+        end
     end
+
 endmodule
 `endif

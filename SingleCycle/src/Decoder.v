@@ -1,5 +1,3 @@
-`timescale 1ns/1ps
-
 module Decoder(
     input   [31:0]  instruction,
     output  [6:0]   opcode,
@@ -11,10 +9,10 @@ module Decoder(
 );
     
     assign opcode   = instruction[6:0];
-    assign rs1      = instruction[19:15];
-    assign rs2      = instruction[24:20];
     assign rd       = instruction[11:7];
     assign funct3   = instruction[14:12];
+    assign rs1      = instruction[19:15];
+    assign rs2      = instruction[24:20];
     assign funct7   = instruction[31:25];
 
 endmodule

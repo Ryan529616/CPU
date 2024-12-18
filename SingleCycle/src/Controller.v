@@ -1,4 +1,3 @@
-`timescale 1ns/1ps
 `include "defines.v"
 
 module Controller(
@@ -6,7 +5,7 @@ module Controller(
     input       [2:0]   funct3,
     input       [6:0]   funct7,
     output reg          Branch,
-    output reg          MemREAD,
+    output reg          MemRead,
     output reg          MemtoReg,
     output reg  [1:0]   MemWrite,
     output reg          ALUSrc,
@@ -17,16 +16,16 @@ module Controller(
 
     always@*begin
         case(opcode)
-            `LUI:   {Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010110;
-            `AUIPC: {Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010111;
-            `JAL:   {Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110110;
-            `JALR:  {Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110110;
-            `BRANCH:{Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110000;
-            `LOAD:  {Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b011110;
-            `STORE: {Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010100;
-            `OP_IMM:{Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010110;
-            `OP:    {Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010010;
-            default:{Branch,MemREAD,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010000;
+            `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010110;
+            `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010111;
+            `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110110;
+            `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110110;
+            `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110000;
+            `LOAD:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b011110;
+            `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010100;
+            `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010110;
+            `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010010;
+            default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010000;
         endcase
     end
 
@@ -35,7 +34,7 @@ module Controller(
             `LUI:   ALUOp = `LUI_ALUOP;
             `AUIPC: ALUOp = `IDLE;
             `JAL:   ALUOp = `IDLE;
-            `JALR:  ALUOp = `IDLE;
+            `JALR:  ALUOp = `ADD;
             `BRANCH: begin
                 case(funct3)
                     3'b000:  ALUOp = `BEQ;

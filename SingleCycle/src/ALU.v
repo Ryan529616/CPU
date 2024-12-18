@@ -59,7 +59,7 @@ module ALU (
                 else Branch_ALU = 1'b0;
             end
             `BLTU:begin
-                if(rs1_data < rs2_data) Branch_ALU = 1;
+                if(rs1_data < rs2_data) Branch_ALU = 1'b1;
                 else Branch_ALU = 1'b0;
             end
             `BGEU:begin

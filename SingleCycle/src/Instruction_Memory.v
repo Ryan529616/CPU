@@ -1,4 +1,3 @@
-`timescale 1ns/1ps
 `include "defines.v"
 `include "Sram.v"
 
@@ -9,7 +8,7 @@ module Instruction_Memory(
 );
     Sram sram(
         .clk(clk),
-        .MemREAD(1'b1),
+        .MemRead(1'b1),
         .MemWrite(`WRITE_IDLE),
         .address(pc),
         .write_data(32'bz),
