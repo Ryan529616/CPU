@@ -10,7 +10,7 @@ module Controller (
     input clk,
     input rst,
     input wake,
-    input  stall,
+    input stall,
     input branch_taken,
     input [6:0] opcode,
     output reg nop,

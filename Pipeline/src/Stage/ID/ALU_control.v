@@ -10,7 +10,7 @@ module ALU_control (
             `LUI:   ALUOp = `ADD;
             `AUIPC: ALUOp = `IDLE;
             `JAL:   ALUOp = `IDLE;
-            `JALR:  ALUOp = `IDLE;
+            `JALR:  ALUOp = `ADD;
             `BRANCH: begin
                 case(funct3)
                     3'b000:  ALUOp = `BEQ;

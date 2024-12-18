@@ -4,11 +4,11 @@
 `include "IF/Reg_PC.v"
 
 module IF (
-    input               clk,
-    input               rst,
-    input               branch,
-    input               branch_taken,
-    input    [31:0] instruction_in,
+    input         clk,
+    input         rst,
+    input         branch,
+    input         branch_taken,
+    input  [31:0] instruction_in,
     output [31:0] instruction_out,
     output [31:0] pc,
     output [31:0] next_pc,
