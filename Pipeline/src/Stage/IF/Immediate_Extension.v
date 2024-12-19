@@ -1,6 +1,6 @@
 `include "../defines.v"
 
-module Imme_Ext(
+module Immediate_Extension(
     input      [31:0]  instruction,
     output reg [31:0]  imm
 ); 

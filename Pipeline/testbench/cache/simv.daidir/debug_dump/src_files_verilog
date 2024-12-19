@@ -1,0 +1,3 @@
+/home/summer/work_dir/CPU/Pipeline/src/Stage/IF/Instruction_Cache.v
+/home/summer/work_dir/CPU/Pipeline/src/Stage/IF/Instruction_Cache_Controller.v
+/home/summer/work_dir/CPU/Pipeline/testbench/cache/Instruction_Cache_Controller_tb.v

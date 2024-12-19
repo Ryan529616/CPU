@@ -1,6 +1,7 @@
 `include "../defines.v"
 
 module Decoder(
+    input    [2:0]  current_state,
     input   [31:0]  instruction,
     output  [6:0]   opcode,
     output  [4:0]   rs1,
@@ -27,17 +28,27 @@ module Decoder(
 
 
     always@*begin
-        case(opcode)
-            `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01011;
-            `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01011;
-            `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b11011;
-            `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b11011;
-            `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b11010;
-            `LOAD:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01111;
-            `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01010;
-            `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01011;
-            `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01001;
-            default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01000;
+        case(current_state)
+        `NORMAL: begin
+            case(opcode)
+                `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01011;
+                `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01011;
+                `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b11011;
+                `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b11011;
+                `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b11010;
+                `LOAD:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01111;
+                `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01010;
+                `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01011;
+                `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01001;
+                default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01000;
+            endcase
+        end
+        `NOP: begin
+            {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00000;
+        end
+        default: begin
+            {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01000;
+        end
         endcase
     end
 

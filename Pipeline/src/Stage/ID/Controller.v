@@ -1,18 +1,12 @@
 `include "../defines.v"
 
-`define WORK 3'b000
-`define NOP 3'b010
-`define HALT 3'b011
-`define FLUSH 3'b100
-`define MUL 3'b101
-
 module Controller (
     input clk,
     input rst,
-    input wake,
-    input stall,
-    input branch_taken,
+    input cache_miss_detected,
+    input refill_complete,
     input [6:0] opcode,
+    output stall,
     output reg nop,
     output reg halt,
     output reg flush
@@ -26,41 +20,34 @@ module Controller (
         end
         else begin 
             current_state <= next_state;
-            if (current_state == `MUL) mul_counter <= mul_counter + 3'b1;
         end
     end
+
     always@* begin
+        halt = 1'b0;
         case(current_state)
-            `WORK: begin
+            `NORMAL: begin
                 if (branch_taken) next_state = `FLUSH;
                 else if (opcode ==`LOAD) next_state = `NOP;
-                else if (opcode == `ECALL) next_state = `HALT;
-                else if (opcode == `MUL)  next_state = `MUL;
-                else  next_state = `WORK;
+                else if ((opcode == `ECALL)||(opcode==`EBREAK)) next_state = `HALT;
+                else if (cache_miss_detected)begin 
+                    flush = 1'b1;
+                    next_state = `CACHE_MISS;
+                end
+                else  next_state = `NORMAL;
             end
             `NOP: begin
-                next_state = `WORK;
-                nop = 1'b1;
+                next_state = `NORMAL;
             end
             `HALT: begin
                 halt = 1'b1;
-                if (wake) next_state = `WORK;
-                else next_state = `HALT;
             end
-            `FLUSH: begin
-                next_state = `WORK;
-                flush = 1'b1;
-            end
-            `MUL: begin
-                if (mul_counter == 3'd5) begin
-                    next_state = `WORK;
-                end
-                else begin
-                    next_state = `MUL;
-                end
+            `CACHE_MISS: begin
+                if(refill_complete) next_state = `NORMAL;
+                else next_state = `CACHE_MISS;
             end
             default: begin
-                next_state = `WORK;
+                next_state = `NOP;
             end
         endcase
     end

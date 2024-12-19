@@ -2,15 +2,18 @@
 `ifndef DEFINES_V
 `define DEFINES_V
 
-`define LUI         7'b0110111
-`define AUIPC    7'b0010111
-`define JAL          7'b1101111
-`define JALR        7'b1100111
+`define LUI    7'b0110111
+`define AUIPC  7'b0010111
+`define JAL    7'b1101111
+`define JALR   7'b1100111
 `define BRANCH 7'b1100011
-`define LOAD      7'b0000011
-`define STORE     7'b0100011 
+`define LOAD   7'b0000011
+`define STORE  7'b0100011 
 `define OP_IMM 7'b0010011
-`define OP           7'b0110011
+`define OP     7'b0110011
+`define ECALL  7'b1110011
+`define EBREAK 7'b1110011
+`define CSR    7'b1110011
 
 `define IDLE    5'b00000
 `define ADD     5'b00001
@@ -47,7 +50,6 @@
 `define SW 3'b010
 
 // CSR
-`define CSR      7'b1110011
 `define CYCLEL   12'hc00
 `define CYCLEH   12'hc80
 `define MTVEC    12'h305
@@ -64,9 +66,13 @@
 `define CSRRSI 3'b110;
 `define CSRRCI 3'b111;
 
-`define ECALL  32'h73;
-`define EBREAK 32'h00100073;
 `define MRET   32'h30200073;
+
+`define NOP        3'b000
+`define CACHE_MISS 3'b001
+`define HALT       3'b010
+`define NORMAL     3'b011
+`define FLUSH      3'b100
 
 `endif
 
