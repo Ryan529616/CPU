@@ -8,13 +8,10 @@ module Branch_Predict (
     input rst,                  
     input branch_taken,
     input branch,
-    input [31:0] pc,
-    input [31:0] imm,
-    output reg [31:0] next_pc
-);
+    output reg branch_prediction,
 
+);
     reg [1:0] current_state, next_state;
-    reg branch_prediction;
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -35,9 +32,6 @@ module Branch_Predict (
     end
 
     always @(*) begin
-        if (branch_prediction) next_pc = pc + imm;
-        else next_pc = pc + 4;
-
         case (current_state)
             `STRONGLY_NOT_TAKEN: begin
                 if (branch_taken)

@@ -16,16 +16,16 @@ module Controller(
 
     always@*begin
         case(opcode)
-            `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010110;
-            `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010111;
-            `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110110;
-            `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110110;
-            `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b110000;
+            `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b000110;
+            `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b000111;
+            `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b100110;
+            `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b100110;
+            `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b100000;
             `LOAD:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b011110;
-            `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010100;
-            `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010110;
-            `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010010;
-            default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b010000;
+            `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b000100;
+            `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b000110;
+            `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b000010;
+            default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PCSrc} = 6'b000000;
         endcase
     end
 

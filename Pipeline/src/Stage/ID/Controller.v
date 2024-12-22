@@ -1,54 +1,65 @@
 `include "../defines.v"
 
-module Controller (
-    input clk,
-    input rst,
-    input cache_miss_detected,
-    input refill_complete,
-    input [6:0] opcode,
-    output stall,
-    output reg nop,
-    output reg halt,
-    output reg flush
+module Controller(
+    input           nop,
+    input   [31:0]  instruction,
+    output  [6:0]   opcode,
+    output  [4:0]   rs1,
+    output  [4:0]   rs2,
+    output  [4:0]   rd,
+    output  [2:0]   funct3,
+    output  [6:0]   funct7
+    output reg          Branch,
+    output reg          MemRead,
+    output reg          MemtoReg,
+    output reg  [1:0]  MemWrite,
+    output reg          ALUSrc,
+    output reg          RegWrite,
+    output reg          csr_we_id2ex,
+    output reg  [11:0]  csr_addr
 );
-    reg [2:0] mul_counter;
-    reg [2:0] current_state, next_state;
 
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin 
-            current_state <= `WORK;
+    assign opcode   = instruction[6:0];
+    assign rd       = instruction[11:7];
+    assign funct3   = instruction[14:12];
+    assign rs1      = instruction[19:15];
+    assign rs2      = instruction[24:20];
+    assign funct7   = instruction[31:25];
+
+
+    always@*begin
+        if(nop)begin
+            {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00000;
         end
-        else begin 
-            current_state <= next_state;
+        else begin
+            case(opcode)
+                `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00011;
+                `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00011;
+                `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b10011;
+                `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b10011;
+                `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b10010;
+                `LOAD:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01111;
+                `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00010;
+                `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00011;
+                `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00001;
+                default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00000;
+            endcase
         end
     end
 
-    always@* begin
-        halt = 1'b0;
-        case(current_state)
-            `NORMAL: begin
-                if (branch_taken) next_state = `FLUSH;
-                else if (opcode ==`LOAD) next_state = `NOP;
-                else if ((opcode == `ECALL)||(opcode==`EBREAK)) next_state = `HALT;
-                else if (cache_miss_detected)begin 
-                    flush = 1'b1;
-                    next_state = `CACHE_MISS;
-                end
-                else  next_state = `NORMAL;
-            end
-            `NOP: begin
-                next_state = `NORMAL;
-            end
-            `HALT: begin
-                halt = 1'b1;
-            end
-            `CACHE_MISS: begin
-                if(refill_complete) next_state = `NORMAL;
-                else next_state = `CACHE_MISS;
-            end
-            default: begin
-                next_state = `NOP;
-            end
-        endcase
+    always@*begin
+        if(nop) MemWrite = `WRITE_IDLE;
+        else if(opcode == `STORE)begin
+            case(funct3)
+                `SB:  MemWrite = `WRITE_BYTE;
+                `SH:  MemWrite = `WRITE_HALF;
+                `SW:  MemWrite = `WRITE_WORD;
+                default: MemWrite = `WRITE_IDLE;
+            endcase
+        end
+        else begin
+            MemWrite = `WRITE_IDLE;
+        end
     end
+
 endmodule

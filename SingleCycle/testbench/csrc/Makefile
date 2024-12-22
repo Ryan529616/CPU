@@ -20,9 +20,9 @@ PRODUCT_TIMESTAMP=product_timestamp
 DEPLIBS=
 VCSUCLI=-lvcsucli
 LLVM_FLAGS=
-RUNTIME=-lvcsnew -lsimprofile -luclinative /home/summer/Synopsys/vcs/2024.09/linux64/lib/vcs_tls.o $(DEPLIBS) 
+RUNTIME=-lvcsnew -lsimprofile -luclinative /home/summer/synopsys/vcs/W-2024.09/linux64/lib/vcs_tls.o $(DEPLIBS) 
 
-VCS_SAVE_RESTORE_OBJ=/home/summer/Synopsys/vcs/2024.09/linux64/lib/vcs_save_restore_new.o
+VCS_SAVE_RESTORE_OBJ=/home/summer/synopsys/vcs/W-2024.09/linux64/lib/vcs_save_restore_new.o
 
 # Select your favorite compiler
 
@@ -39,7 +39,7 @@ STDLIB =
 STRIPFLAGS= 
 
 PRE_LDFLAGS= # Loader Flags
-LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/home/summer/Synopsys/vcs/2024.09/linux64/lib -L/home/summer/Synopsys/vcs/2024.09/linux64/lib 
+LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/home/summer/synopsys/vcs/W-2024.09/linux64/lib -L/home/summer/synopsys/vcs/W-2024.09/linux64/lib 
 # Picarchive Flags
 PICLDFLAGS= -Wl,-rpath-link=./ 
 PIC_LD=ld
@@ -49,7 +49,7 @@ CRT0=
 # C run time startup
 CRTN=
 # Machine specific libraries
-SYSLIBS=/home/summer/Synopsys/verdi/2024.09/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl
+SYSLIBS=/home/summer/synopsys/verdi/W-2024.09/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl
 
 # Default defines
 SHELL=/bin/sh
@@ -65,15 +65,15 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/home/summer/Synopsys/vcs/2024.09/include   
+CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/home/summer/synopsys/vcs/W-2024.09/include   
 
-CFLAGS_O0=-w  -pipe -fPIC -I/home/summer/Synopsys/vcs/2024.09/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_O0=-w  -pipe -fPIC -I/home/summer/synopsys/vcs/W-2024.09/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_CG=-w  -pipe -fPIC -I/home/summer/Synopsys/vcs/2024.09/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG=-w  -pipe -fPIC -I/home/summer/synopsys/vcs/W-2024.09/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/home/summer/Synopsys/vcs/2024.09/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/home/summer/synopsys/vcs/W-2024.09/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_RMAR=-w  -pipe -fPIC -I/home/summer/Synopsys/vcs/2024.09/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_RMAR=-w  -pipe -fPIC -I/home/summer/synopsys/vcs/W-2024.09/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
 CFLAGS_CG+=$(STDLIB)
 CFLAGS_CG_CLIB+=$(STDLIB)
@@ -81,7 +81,7 @@ CFLAGS_O0+=$(STDLIB)
 LD_PARTIAL_LOADER=ld
 # Partial linking
 LD_PARTIAL=$(LD_PARTIAL_LOADER) -r -o
-LIBS=-lnuma -lvirsim -lerrorinf -lsnpsmalloc -lvfs quicksort.so 
+LIBS=-lnuma -lvirsim -lerrorinf -lsnpsmalloc -lvfs 
 
 
 ### ====== ###
@@ -140,6 +140,6 @@ $(PRODUCT_TIMESTAMP) : elabMhIdDidWork_concat product_clean_order
 	@touch $(PRODUCT_TIMESTAMP)
 	@-if [ -d ./objs ]; then find ./objs -type d -empty -delete; fi
 
-$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB) $(DPI_ALLOW_MAIN_SO)  /home/summer/Synopsys/vcs/2024.09/linux64/lib/libvcsnew.so /home/summer/Synopsys/vcs/2024.09/linux64/lib/libsimprofile.so /home/summer/Synopsys/vcs/2024.09/linux64/lib/libuclinative.so /home/summer/Synopsys/vcs/2024.09/linux64/lib/vcs_tls.o /home/summer/Synopsys/vcs/2024.09/linux64/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
+$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB) $(DPI_ALLOW_MAIN_SO)  /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libvcsnew.so /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libsimprofile.so /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libuclinative.so /home/summer/synopsys/vcs/W-2024.09/linux64/lib/vcs_tls.o /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
 	@touch $(PRODUCT)
 

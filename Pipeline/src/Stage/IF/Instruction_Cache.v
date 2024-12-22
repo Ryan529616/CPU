@@ -76,11 +76,11 @@ module Instruction_Cache #(
 
     always @(posedge clk or posedge rst) begin
         if (rst || flush) begin
-            data_out <= 32'bz;
+            data_out <= 32'b0;
         end else if (hit_internal) begin
             data_out <= data_array[set_index][hit_way][addr[BLOCK_OFFSET_BITS-1:2]];
         end else begin
-            data_out <= 0;
+            data_out <= 32'b0;
         end
     end
 
@@ -99,12 +99,12 @@ module Instruction_Cache #(
     // 填充邏輯
 
     always @(posedge clk or posedge rst) begin
-        if (rst || flush) replace_way <= 0;
+        if (rst) replace_way <= 0;
         else if(refill_complete) replace_way <= lfsr; // 使用 LFSR 產生新的替換路徑
     end
 
     always @(posedge clk or posedge rst) begin
-        if (rst || flush) begin
+        if (rst) begin
             refill_counter <= 0;
             refill_complete <= 0;
         end else if (refill_valid) begin

@@ -1,25 +1,55 @@
-0
+30       
+0 Top.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Top.v
+0 Reg_PC.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Reg_PC.v
+0 Decoder.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Decoder.v
+0 Imme_Ext.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Imme_Ext.v
+0 defines.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/defines.v
+0 Controller.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Controller.v
+0 RegFile.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/RegFile.v
+0 ALU_Src_MUX.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/ALU_Src_MUX.v
+0 ALU.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/ALU.v
+0 LD_Filter.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/LD_Filter.v
+0 Branch_Unit.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Branch_Unit.v
+0 RegWrite_MUX.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/RegWrite_MUX.v
+0 Instruction_Memory.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Instruction_Memory.v
+0 Sram.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Sram.v
+0 Data_Memory.v
+0 /home/summer/synopsys/vcs/W-2024.09/etc/systemverilog/Data_Memory.v
 32
-+incdir+/home/summer/Synopsys/vcs/2024.09/include
-+itf+/home/summer/Synopsys/vcs/2024.09/linux64/lib/vcsdp_lite.tab
++incdir+../src
++itf+/home/summer/synopsys/vcs/W-2024.09/linux64/lib/vcsdp_lite.tab
 +vcsd1
 +vpi
 -Mamsrun=
 -Masflags=
 -Mcc=gcc
--Mcfl= -pipe -fPIC -O -I/home/summer/Synopsys/vcs/2024.09/include
+-Mcfl= -pipe -fPIC -O -I/home/summer/synopsys/vcs/W-2024.09/include
 -Mcplusplus=g++
 -Mcrt0=
 -Mcrtn=
 -Mcsrc=
 -Mexternalobj=
 -Mldflags= -rdynamic
--Mobjects= /home/summer/Synopsys/vcs/2024.09/linux64/lib/libvirsim.so /home/summer/Synopsys/vcs/2024.09/linux64/lib/liberrorinf.so /home/summer/Synopsys/vcs/2024.09/linux64/lib/libsnpsmalloc.so /home/summer/Synopsys/vcs/2024.09/linux64/lib/libvfs.so /home/summer/work_dir/CPU/SingleCycle/tb/quicksort.so
+-Mobjects= /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libvirsim.so /home/summer/synopsys/vcs/W-2024.09/linux64/lib/liberrorinf.so /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libsnpsmalloc.so /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libvfs.so
 -Mout=simv
--Msaverestoreobj=/home/summer/Synopsys/vcs/2024.09/linux64/lib/vcs_save_restore_new.o
--Msyslibs=/home/summer/Synopsys/verdi/2024.09/share/PLI/VCS/LINUX64/pli.a -ldl
+-Msaverestoreobj=/home/summer/synopsys/vcs/W-2024.09/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/home/summer/synopsys/verdi/W-2024.09/share/PLI/VCS/LINUX64/pli.a -ldl
 -Mvcsaceobjs=
--Mxcflags= -pipe -fPIC -I/home/summer/Synopsys/vcs/2024.09/include
+-Mxcflags= -pipe -fPIC -I/home/summer/synopsys/vcs/W-2024.09/include
 -Mxllcflags=
 -P
 -Xvcs_run_simv=1
@@ -29,11 +59,13 @@
 -gen_obj
 -picarchive
 -sverilog
-/home/summer/Synopsys/vcs/2024.09/linux64/bin/vcs1
-/home/summer/Synopsys/verdi/2024.09/share/PLI/VCS/LINUX64/verdi.tab
-quicksort_dpi.sv
-114
+/home/summer/synopsys/vcs/W-2024.09/linux64/bin/vcs1
+/home/summer/synopsys/verdi/W-2024.09/share/PLI/VCS/LINUX64/verdi.tab
+testbench_quicksort.v
+115
 which_declare=declare -f
+synopsys_TMAX=/home/summer/synopsys/txs/W-2024.09
+synopsys=/home/summer/synopsys
 XMODIFIERS=@im=ibus
 XDG_VTNR=2
 XDG_SESSION_TYPE=x11
@@ -50,13 +82,13 @@ Virtuoso_HOME=/home/summer/Cadence/IC/IC_23.10.060
 VTE_VERSION=5204
 VMR_MODE_FLAG=64
 VERILATOR_ROOT=/usr/local/share/verilator
-VERDI_HOME=/home/summer/Synopsys/verdi/2024.09
-VC_STATIC_HOME=/home/summer/Synopsys/vc_static/2024.09
-VCS_PYTHON3=/home/summer/Synopsys/vcs/2024.09/linux64/bin/Python3/bin/python3
+VERDI_HOME=/home/summer/synopsys/verdi/W-2024.09
+VC_STATIC_HOME=/home/summer/synopsys/vc_static/W-2024.09
+VCS_PYTHON3=/home/summer/synopsys/vcs/W-2024.09/linux64/bin/Python3/bin/python3
 VCS_PATHMAP_PRELOAD_DONE=1
 VCS_MX_HOME_INTERNAL=1
 VCS_MODE_FLAG=64
-VCS_HOME=/home/summer/Synopsys/vcs/2024.09
+VCS_HOME=/home/summer/synopsys/vcs/W-2024.09
 VCS_EXEC_DONE=1
 VCS_DEPTH=0
 VCS_ARG_ADDED_FOR_TMP=1
@@ -64,27 +96,25 @@ VCS_ARCH_OVERRIDE=linux
 VCS_ARCH=linux64
 USERNAME=summer
 UNAME=/bin/uname
-TOOL_HOME=/home/summer/Synopsys/vcs/2024.09/linux64
+TOOL_HOME=/home/summer/synopsys/vcs/W-2024.09/linux64
 S_COLORS=auto
-SYNOPSYS_TMAX=/home/summer/Synopsys/txs/2024.09
-SYNOPSYS=/home/summer/Synopsys
 SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
-SPYGLASS_HOME=/home/summer/Synopsys/spyglass/2024.09/SPYGLASS_HOME
+SPYGLASS_HOME=/home/summer/synopsys/spyglass/W-2024.09/SPYGLASS_HOME
 SPECTRE_HOME=/home/summer/Cadence/Spectre
-SNPS_VCS_PYTHON3=/home/summer/Synopsys/vcs/2024.09/linux64/bin/Python3/bin/python3
-SNPS_VCS_CLANG_PATH=/home/summer/Synopsys/vcs/2024.09/linux64/clang
+SNPS_VCS_PYTHON3=/home/summer/synopsys/vcs/W-2024.09/linux64/bin/Python3/bin/python3
+SNPS_VCS_CLANG_PATH=/home/summer/synopsys/vcs/W-2024.09/linux64/clang
 SNPS_INTERNAL_VCS_LINUX_OS=linux
 SNPS_ARCH=linux64
-SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/4271,unix/unix:/tmp/.ICE-unix/4271
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/4368,unix/unix:/tmp/.ICE-unix/4368
 SCRNAME=vcs
 SCRIPT_NAME=vcs
-SCL_HOME=/home/summer/Synopsys/scl/2024.06
+SCL_HOME=/home/summer/synopsys/scl/2024.06
 SAED32_28_PDK=/home/summer/library/SAED/32/SAED_PDK32nm
 RISCV=/opt/riscv
 QT_QPA_PLATFORM=xcb
 QT_IM_MODULE=ibus
-PRIMEWAVE_HOME=home/summer/Synopsys/primewave/2024.09
+PRIMEWAVE_HOME=home/summer/synopsys/primewave/W-2024.09
 PERL_MM_OPT=INSTALL_BASE=/home/summer/perl5
 PERL_MB_OPT=--install_base "/home/summer/perl5"
 PERL_LOCAL_LIB_ROOT=/home/summer/perl5
@@ -110,29 +140,29 @@ MGC_FDI_OA_VERSION=22.61
 MC2_INSTALL_DIR=/home/summer/library/MC2_2012
 LOADEDMODULES=
 LESSOPEN=||/usr/bin/lesspipe.sh %s
-LC_HOME=/home/summer/Synopsys/lc/2024.09
+LC_HOME=/home/summer/synopsys/lc/W-2024.09
 LC_ALL=C
-LAKER_OA_HOME=/home/summer/Synopsys/laker_oa/2023.09
+LAKER_OA_HOME=/home/summer/synopsys/laker_oa/2023.09
 INDAGO_ROOT=/home/summer/Cadence/INDAGOA722.03
-ICV_HOME_DIR=/home/summer/Synopsys/icvalidator/2024.09
-ICC2_HOME=/home/summer/Synopsys/icc2/2024.09
-HSPICE_HOME=/home/summer/Synopsys/hspice/2024.09/hspice
+ICV_HOME_DIR=/home/summer/synopsys/icvalidator/W-2024.09
+ICC2_HOME=/home/summer/synopsys/icc2/W-2024.09
+HSPICE_HOME=/home/summer/synopsys/hspice/W-2024.09/hspice
 GNOME_TERMINAL_SERVICE=:1.79
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/a50a2157_6015_4f54_96df_e00cf1878375
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/4cd6ed9b_ff2e_4cdd_ae46_918c3c434458
 GNOME_DESKTOP_SESSION_ID=this-is-deprecated
 GDM_LANG=zh_TW.UTF-8
 GDMSESSION=gnome
 GDK_BACKEND=x11
-EUCLIDE_HOME=/home/summer/Synopsys/euclide/2024.09
+EUCLIDE_HOME=/home/summer/synopsys/euclide/W-2024.09
 DS_HOME=/home/summer/ARM/ARMDS
 DESKTOP_SESSION=gnome
-DESKTOP_AUTOSTART_ID=10aa4885f22192f7d9173408727041676200000042710007
-DESIGNWARE_HOME=/home/summer/Synopsys/design_ware
-DELPHI_HOME=/home/summer/Synopsys/dsoai/2024.09
-DC_HOME=/home/summer/Synopsys/syn/2024.09
+DESKTOP_AUTOSTART_ID=10d7965ecfe81b77e9173482554590804200000043680007
+DESIGNWARE_HOME=/home/summer/synopsys/design_ware
+DELPHI_HOME=/home/summer/synopsys/dsoai/W-2024.09
+DC_HOME=/home/summer/synopsys/syn/W-2024.09
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 Cadence_Dir=/home/summer/Cadence
-CUSTOM_COMPILER_HOME=/home/summer/Synopsys/customcompiler/2024.09
+CUSTOM_COMPILER_HOME=/home/summer/synopsys/customcompiler/W-2024.09
 COLORTERM=truecolor
 CDS_Netlisting_Mode=Analog
 CDS_LOAD_ENV=CSF
@@ -147,17 +177,32 @@ BASH_FUNC_module%%=() {  _module_raw "$@" 2>&1_}
 BASH_FUNC_ml%%=() {  module ml "$@"_}
 BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
 ARMLMD_LICENSE_FILE=/home/summer/ARM/lic/armlmd.lic
+ALE_HOME=/home/summer/synopsys/ale/W-2024.09-SP1/bin
 0
 0
-3
-1731789898 quicksort_dpi.sv
-1723953532 /home/summer/Synopsys/verdi/2024.09/share/PLI/VCS/LINUX64/verdi.tab
-1725332768 /home/summer/Synopsys/vcs/2024.09/linux64/lib/vcsdp_lite.tab
-5
-1725336088 /home/summer/Synopsys/vcs/2024.09/linux64/lib/libvirsim.so
-1725334290 /home/summer/Synopsys/vcs/2024.09/linux64/lib/liberrorinf.so
-1725334282 /home/summer/Synopsys/vcs/2024.09/linux64/lib/libsnpsmalloc.so
-1725334269 /home/summer/Synopsys/vcs/2024.09/linux64/lib/libvfs.so
-1733604454 /home/summer/work_dir/CPU/SingleCycle/tb/quicksort.so
-1734093987 simv.daidir
+18
+1734495635 ../src/Data_Memory.v
+1734495635 ../src/Sram.v
+1734495635 ../src/Instruction_Memory.v
+1734495635 ../src/RegWrite_MUX.v
+1734495635 ../src/Branch_Unit.v
+1734495635 ../src/LD_Filter.v
+1734495635 ../src/ALU.v
+1734495635 ../src/ALU_Src_MUX.v
+1734495635 ../src/RegFile.v
+1734828690 ../src/Controller.v
+1734495635 ../src/defines.v
+1734495635 ../src/Imme_Ext.v
+1734495635 ../src/Decoder.v
+1734495635 ../src/Reg_PC.v
+1734495635 ../src/Top.v
+1734828497 testbench_quicksort.v
+1723953532 /home/summer/synopsys/verdi/W-2024.09/share/PLI/VCS/LINUX64/verdi.tab
+1725332768 /home/summer/synopsys/vcs/W-2024.09/linux64/lib/vcsdp_lite.tab
+4
+1725336088 /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libvirsim.so
+1725334290 /home/summer/synopsys/vcs/W-2024.09/linux64/lib/liberrorinf.so
+1725334282 /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libsnpsmalloc.so
+1725334269 /home/summer/synopsys/vcs/W-2024.09/linux64/lib/libvfs.so
+1734828694 simv.daidir
 -1 partitionlib

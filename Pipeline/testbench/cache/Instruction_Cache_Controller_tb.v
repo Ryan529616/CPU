@@ -67,7 +67,6 @@ module Instruction_Cache_Controller_tb;
         .cache_miss_detected(cache_miss_detected),
         .refill_valid(refill_valid),
         .refill_data(refill_data),
-        .refill_complete(refill_complete),
         .ARADDR(ARADDR),
         .ARVALID(ARVALID),
         .ARREADY(ARREADY),

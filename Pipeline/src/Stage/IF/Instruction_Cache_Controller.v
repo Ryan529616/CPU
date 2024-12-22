@@ -6,14 +6,18 @@ module Instruction_Cache_Controller #(
     input wire rst,
 
     // 與 CPU 的接口
-    input wire [31:0] addr,            // CPU 請求的地址
-    input wire fetch_req,              // CPU 請求信號
+    input wire branch_taken,           // 分支是否被採納
+    input wire branch_prediction,      // 分支是否正確
+    input wire [31:0] addr_in,            // CPU 請求的地址
     output reg [DATA_LENGTH-1:0] data_out, // 返回 CPU 的數據
-    output reg hit,                    // 命中信號
 
     // 與 Cache 的接口
-    output reg cache_miss_detected,    // 通知 Cache 發生 Miss
-    output reg refill_valid,           // 向 Cache 發送填充數據有效信號
+    input wire                    miss,            // Cache Miss
+    input wire                    refill_complete, // Cache 填充完成
+    input wire  [DATA_LENGTH-1:0] data_in,         // Cache 返回的數據
+    output wire            [31:0] addr_out,        // Cache 請求的地址
+    output reg                    flush,           // 清空 Cache
+    output reg                    refill_valid,    // 向 Cache 發送填充數據有效信號
 
     // 與 AXI3 的接口
     output reg [31:0] ARADDR,          // AXI 讀取地址
@@ -32,6 +36,9 @@ module Instruction_Cache_Controller #(
     reg [1:0] state, next_state;
     reg [$clog2(LINE_SIZE / DATA_LENGTH)-1:0] refill_counter; // 填充數據計數器
 
+    assign addr_out = addr_in;
+    assign data_out = data_in;
+
     // 狀態機切換邏輯
     always @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -42,34 +49,15 @@ module Instruction_Cache_Controller #(
     end
 
     // 狀態機行為
-    always @(*) begin
-        case (state)
-            IDLE: begin
-                if (~hit) begin
-                    next_state = MISS;
-                end else begin
-                    next_state = IDLE;
-                end
-            end
-            MISS: begin
-                if (ARREADY) begin
-                    next_state = REFILL;
-                end else begin
-                    next_state = MISS;
-                end
-            end
-            REFILL: begin
-                if (refill_counter == (LINE_SIZE / DATA_LENGTH) - 1) begin
-                    next_state = IDLE;
-                end else begin
-                    next_state = REFILL;
-                end
-            end
-            default: begin
-                next_state = IDLE;
-            end
-        endcase
-    end
+always @(*) begin
+    case (state)
+        IDLE: next_state = miss ? MISS : IDLE;
+        MISS: next_state = flush ? IDLE : (ARREADY ? REFILL : MISS);
+        REFILL: next_state = flush ? IDLE : ((refill_counter == (LINE_SIZE / DATA_LENGTH) - 1) ? IDLE : REFILL);
+        default: next_state = IDLE;
+    endcase
+end
+
 
     // 狀態機操作
     always @(posedge clk or posedge rst) begin
@@ -79,19 +67,9 @@ module Instruction_Cache_Controller #(
             RREADY <= 0;
             refill_valid <= 0;
             refill_counter <= 0;
-            hit <= 0;
-            data_out <= 0;
-            cache_miss_detected <= 0;
         end else begin
             case (state)
                 IDLE: begin
-                    if (fetch_req) begin
-                        cache_miss_detected <= 1;
-                        hit <= 0;
-                    end else begin
-                        cache_miss_detected <= 0;
-                        hit <= 0;
-                    end
                 end
                 MISS: begin
                     if (!ARVALID) begin
@@ -107,7 +85,8 @@ module Instruction_Cache_Controller #(
                         refill_valid <= 1;
                         if (refill_counter < (LINE_SIZE / DATA_LENGTH) - 1) begin
                             refill_counter <= refill_counter + 1;
-                        end else begin
+                        end 
+                        else begin
                             refill_counter <= 0;
                             refill_valid <= 0;
                             RREADY <= 0;
@@ -120,4 +99,9 @@ module Instruction_Cache_Controller #(
         end
     end
 
+    always @(posedge clk or posedge rst) begin
+        if(rst) flush <= 0;
+        else if(branch_taken != branch_prediction) flush <= 1;
+        else flush <= 0;
+    end
 endmodule

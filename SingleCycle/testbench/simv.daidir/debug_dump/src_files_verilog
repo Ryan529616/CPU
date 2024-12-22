@@ -1,1 +1,16 @@
-/home/summer/work_dir/CPU/SingleCycle/tb/quicksort_dpi.sv
+/home/summer/work_dir/CPU/SingleCycle/src/ALU.v
+/home/summer/work_dir/CPU/SingleCycle/src/ALU_Src_MUX.v
+/home/summer/work_dir/CPU/SingleCycle/src/Branch_Unit.v
+/home/summer/work_dir/CPU/SingleCycle/src/Controller.v
+/home/summer/work_dir/CPU/SingleCycle/src/Data_Memory.v
+/home/summer/work_dir/CPU/SingleCycle/src/Decoder.v
+/home/summer/work_dir/CPU/SingleCycle/src/Imme_Ext.v
+/home/summer/work_dir/CPU/SingleCycle/src/Instruction_Memory.v
+/home/summer/work_dir/CPU/SingleCycle/src/LD_Filter.v
+/home/summer/work_dir/CPU/SingleCycle/src/RegFile.v
+/home/summer/work_dir/CPU/SingleCycle/src/RegWrite_MUX.v
+/home/summer/work_dir/CPU/SingleCycle/src/Reg_PC.v
+/home/summer/work_dir/CPU/SingleCycle/src/Sram.v
+/home/summer/work_dir/CPU/SingleCycle/src/Top.v
+/home/summer/work_dir/CPU/SingleCycle/src/defines.v
+/home/summer/work_dir/CPU/SingleCycle/testbench/testbench_quicksort.v
