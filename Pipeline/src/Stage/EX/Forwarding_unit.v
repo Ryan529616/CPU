@@ -1,12 +1,12 @@
 module Forwarding_unit(
-    input        EX_MEM_RegWrite,
-    input        MEM_WB_RegWrite,
-    input  [4:0] rs1,
-    input  [4:0] rs2,
-    input  [4:0] EX_MEM_rd,
-    input  [4:0] MEM_WB_rd,
-    output [1:0] ForwardA,
-    output [1:0] ForwardB
+    input  wire       EX_MEM_RegWrite,
+    input  wire       MEM_WB_RegWrite,
+    input  wire [4:0] rs1,
+    input  wire [4:0] rs2,
+    input  wire [4:0] EX_MEM_rd,
+    input  wire [4:0] MEM_WB_rd,
+    output wire [1:0] ForwardA,
+    output wire [1:0] ForwardB
 );
 
     always@*begin

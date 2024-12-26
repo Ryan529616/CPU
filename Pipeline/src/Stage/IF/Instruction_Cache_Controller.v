@@ -6,10 +6,11 @@ module Instruction_Cache_Controller #(
     input wire rst,
 
     // 與 CPU 的接口
-    input wire branch_taken,           // 分支是否被採納
-    input wire branch_prediction,      // 分支是否正確
-    input wire [31:0] addr_in,            // CPU 請求的地址
-    output reg [DATA_LENGTH-1:0] data_out, // 返回 CPU 的數據
+    input wire                   branch_taken,      // 分支是否被採納
+    input wire                   branch_prediction, // 分支是否正確
+    input wire            [31:0] addr_in,           // CPU 請求的地址
+    output reg                   stall,             // CPU 是否停頓
+    output reg [DATA_LENGTH-1:0] data_out,          // 返回 CPU 的數據
 
     // 與 Cache 的接口
     input wire                    miss,            // Cache Miss
@@ -99,9 +100,12 @@ end
         end
     end
 
-    always @(posedge clk or posedge rst) begin
-        if(rst) flush <= 0;
-        else if(branch_taken != branch_prediction) flush <= 1;
+    always @* begin
+        if(branch_taken != branch_prediction) flush = 1;
         else flush <= 0;
+
+        if(miss) stall = 1;
+        else stall = 0;
     end
+
 endmodule

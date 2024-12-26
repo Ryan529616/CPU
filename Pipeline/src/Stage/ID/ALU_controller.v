@@ -1,4 +1,4 @@
-module ALU_control (
+module ALU_controller (
     input      [2:0] funct3,
     input      [6:0] funct7,
     input      [6:0] opcode

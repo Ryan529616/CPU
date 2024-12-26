@@ -31,16 +31,6 @@ module CLINT (
     output reg [31:0] id_interrupt_handler_addr,
     output reg id_interrupt_assert
 
-    //system call
-    input [31:0] a0_data,
-    input [31:0] a1_data,
-    input [31:0] a2_data,
-    input [31:0] a3_data,
-    input [31:0] a4_data,
-    input [31:0] a5_data,
-    input [31:0] a6_data,
-    input [31:0] a7_data,
-    output exit
 );
     
     // Interrupt State
