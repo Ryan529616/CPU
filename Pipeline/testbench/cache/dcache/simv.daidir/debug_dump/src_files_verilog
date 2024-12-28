@@ -1,9 +1,0 @@
-/home/summer/work_dir/CPU/Pipeline/src/Stage/MEM/Data_Cache.v
-/home/summer/work_dir/CPU/Pipeline/src/Stage/MEM/Data_Cache/L1_Data_Cache.v
-/home/summer/work_dir/CPU/Pipeline/src/Stage/MEM/Data_Cache/L1_Data_Cache_Controller.v
-/home/summer/work_dir/CPU/Pipeline/src/Stage/MEM/Data_Cache/L2_Data_Cache.v
-/home/summer/work_dir/CPU/Pipeline/src/Stage/MEM/Data_Cache/L2_Data_Cache_Controller.v
-/home/summer/work_dir/CPU/Pipeline/src/Stage/MEM/Data_Cache/L3_Data_Cache.v
-/home/summer/work_dir/CPU/Pipeline/src/Stage/MEM/Data_Cache/L3_Data_Cache_Controller.v
-/home/summer/work_dir/CPU/Pipeline/src/general/CacheCore.v
-/home/summer/work_dir/CPU/Pipeline/testbench/cache/dcache/Data_Cache_tb.sv
