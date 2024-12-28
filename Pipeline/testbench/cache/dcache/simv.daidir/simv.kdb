@@ -1,0 +1,21 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/home/summer/work_dir/CPU/Pipeline/testbench/cache/dcache
+VCS_HOME=/home/summer/synopsys/vcs/W-2024.09
+VERDI_HOME=/home/summer/synopsys/verdi/W-2024.09
+SystemC=FALSE
+UUM=FALSE
+KDB=FALSE
+USE_NOVAS_HOME=FALSE
+COSIM=FALSE
+TOP=Data_Cache_tb 
+OPTION=-ssv -ssy 
+ELAB_OPTION=-ssv -ssy 
+
+[Value]
+WREALX=ffff534e50535f58
+WREALZ=ffff534e50535f5a
+
+[CompInfo]
+FLOW_OPTS=-ssv -ssy 

@@ -61,15 +61,6 @@ module CPU_Testbench;
                 data_memory.sram.mem[index + 1], data_memory.sram.mem[index]};
     endfunction
 
-    function void set_memory(input int index, input int value);
-        if (index >= 0 && index <= 65535) begin
-            data_memory.sram.mem[index] = value[7:0];
-            data_memory.sram.mem[index + 1] = value[15:8];
-            data_memory.sram.mem[index + 2] = value[23:16];
-            data_memory.sram.mem[index + 3] = value[31:24];
-        end
-    endfunction
-
 
     initial begin
         $readmemh("quicksort.hex", instruction_memory.sram.mem);
