@@ -1,11 +1,11 @@
 `include "Stage/IF.v"
-`include "Stage/IF_ID.v"
+`include "Stage/Reg/IF_ID.v"
 `include "Stage/ID.v"
-`include "Stage/ID_EX.v"
+`include "Stage/Reg/ID_EX.v"
 `include "Stage/EX.v"
-`include "Stage/EX_MEM.v"
+`include "Stage/Reg/EX_MEM.v"
 `include "Stage/MEM.v"
-`include "Stage/MEM_WB.v"
+`include "Stage/Reg/MEM_WB.v"
 `include "Stage/WB.v"
 
 module Top(
@@ -23,13 +23,21 @@ module Top(
     IF if_stage(
         .clk(clk),
         .rst(rst),
-        .branch(Branch),
-        .branch_taken(),
-        .instruction_in(instruction),
-        .instruction_out(instruction_out_IF),
+        .branch(branch),
+        .branch_taken(branch_taken),
         .pc(pc),
-        .next_pc(next_pc),
-        .imm(imm)
+        .imm(imm),
+        .stall(stall),
+        .instruction(instruction),
+        .cache_miss_detected(cache_miss_detected),
+        .refill_complete(refill_complete),
+        
+        .ARADDR(ARADDR),
+        .ARVALID(ARVALID),
+        .ARREADY(ARREADY),
+        .RDATA(RDATA),
+        .RVALID(RVALID),
+        .RREADY(RREADY)
     );
 
     IF_ID if_id(
@@ -42,7 +50,7 @@ module Top(
         .instruction_out(instruction_out)
     );
 
-    ID id(
+    ID id_stage(
         .clk(clk),
         .rst(rst),
         .RegWrite_in(RegWrite),

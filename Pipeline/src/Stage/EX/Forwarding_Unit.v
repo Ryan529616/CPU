@@ -1,4 +1,4 @@
-module Forwarding_unit(
+module Forwarding_Unit(
     input  wire       EX_MEM_RegWrite,
     input  wire       MEM_WB_RegWrite,
     input  wire [4:0] rs1,

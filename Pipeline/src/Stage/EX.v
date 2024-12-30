@@ -1,3 +1,8 @@
+`include "EX/ALU_Src1_MUX.v"
+`include "EX/ALU_Src2_MUX.v"
+`include "EX/ALU.v"
+`include "EX/Forwarding_Unit.v"
+
 module EX (
     input         ALU_Src,
     input  [31:0] pc,
@@ -46,28 +51,50 @@ module EX (
     output        PCSrc_out,
     output  [4:0] ALUOp_out,
 
+/*
     //csr
     input   [31:0] csr_rd;
     output  [31:0] csr_wd;
-
+*/
 );
-    wire ALU_in2;
 
-    ALU_Src_MUX alu_src_mux(
-        .ALU_Src(ALUSrc), 
-        .imm(imm), 
-        .Read_data_2(Read_data_2), 
+    ALU_Src1_MUX alu_src1_mux(
+        .ALU_Src(ALU_Src),
+        .ForwardA(ForwardA),
+        .Read_data_1(Read_data_1),
+        .rd_data(rd_data),
+        .Write_data(Write_data),
+        .ALU_in1(ALU_in1)
+    );
+
+    ALU_Src2_MUX alu_src2_mux(
+        .ALU_Src(ALU_Src),
+        .ForwardB(ForwardB),
+        .imm(imm),
+        .Read_data_2(Read_data_2),
+        .rd_data(rd_data),
+        .Write_data(Write_data),
         .ALU_in2(ALU_in2)
     );
 
     ALU alu(
-        .ALUOp(ALUOp), 
-        .rs1_data(ALU_in1), 
-        .rs2_data(ALU_in2), 
-        .rd_data(rd_data), 
-        .Branch_ALU(Branch_ALU)
+        .ALUOp(ALUOp),
+        .rs1_data(ALU_in1),
+        .rs2_data(ALU_in2),
+        .rd_data(rd_data)
     );
 
+    Forwarding_Unit forwarding_unit(
+        .EX_MEM_RegWrite(RegWrite_in),
+        .MEM_WB_RegWrite(MemtoReg_in),
+        .rs1(rs1_in),
+        .rs2(rs2_in),
+        .EX_MEM_rd(rd_in),
+        .MEM_WB_rd(rd_out),
+        .ForwardA(ForwardA),
+        .ForwardB(ForwardB)
+    );
+/*
     //csr logit
     always@(*) begin
         case (funct3_in)
@@ -80,5 +107,5 @@ module EX (
 			default: csr_wd = 32'b0;
 		endcase
     end
-
+*/
 endmodule

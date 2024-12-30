@@ -13,13 +13,13 @@ module L1_Data_Cache_Controller #(
     //------------------------------------------------
     // Load
     input  wire                   load_valid,
-    input  wire [31:0]           load_addr,
-    output reg  [DATA_LENGTH-1:0]load_data_out,
+    input  wire [31:0]            load_addr,
+    output reg  [DATA_LENGTH-1:0] load_data_out,
     output reg                    load_miss_detected,
 
     // Store
     input  wire                   store_valid,
-    input  wire [31:0]           store_addr,
+    input  wire [31:0]            store_addr,
     input  wire [DATA_LENGTH-1:0] store_data_in,
     output reg                    store_miss_detected,
 
@@ -28,9 +28,9 @@ module L1_Data_Cache_Controller #(
     //------------------------------------------------
     output reg                    l2_req,
     output reg                    l2_we,      // 1=write, 0=read
-    output reg [31:0]            l2_addr,
-    output reg [LINE_SIZE*8-1:0] l2_write_data,
-    input  wire [LINE_SIZE*8-1:0]l2_read_data,
+    output reg [31:0]             l2_addr,
+    output reg [LINE_SIZE*8-1:0]  l2_write_data,
+    input  wire [LINE_SIZE*8-1:0] l2_read_data,
     input  wire                   l2_data_valid,
     input  wire                   l2_ready,
 
@@ -61,10 +61,10 @@ module L1_Data_Cache_Controller #(
 
     // Victim port
     output reg [$clog2(WAYS)-1:0] cache_victim_way,
-    output reg [31:0]            cache_victim_addr,
-    input  wire [31:0]           cache_victim_tag_out,
-    input  wire                  cache_victim_dirty_out,
-    input  wire [LINE_SIZE*8-1:0]cache_victim_line_data_out
+    output reg [31:0]             cache_victim_addr,
+    input  wire [31:0]            cache_victim_tag_out,
+    input  wire                   cache_victim_dirty_out,
+    input  wire [LINE_SIZE*8-1:0] cache_victim_line_data_out
 );
 
     //------------------------------------------------

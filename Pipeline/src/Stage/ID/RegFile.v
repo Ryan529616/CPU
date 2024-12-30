@@ -21,11 +21,11 @@ module RegFile(
     end
 
     genvar idx;
-generate
-    for (idx = 0; idx < 32; idx = idx + 1) begin : expose_registers
-        wire [31:0] debug_register = Registers[idx];
-    end
-endgenerate
+    generate
+        for (idx = 0; idx < 32; idx = idx + 1) begin : expose_registers
+            wire [31:0] debug_register = Registers[idx];
+        end
+    endgenerate
 
     assign Read_data_1 = Registers[Read_register_1];
     assign Read_data_2 = Registers[Read_register_2];

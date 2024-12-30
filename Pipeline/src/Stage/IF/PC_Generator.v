@@ -4,6 +4,7 @@ module PC_Generator (
     input wire        stall,
     input wire        PC_Write,
     input wire        branch_taken,
+    input wire        branch_prediction,
     input wire [31:0] imm,
     output reg [31:0] pc
 
@@ -15,7 +16,8 @@ module PC_Generator (
         end
         else if (PC_Write || ~stall) begin
             if (branch_taken) pc <= pc + imm;
-            else (branch_prediction) pc <= pc + 4;
+            else if (branch_prediction) pc <= pc + imm;
+            else pc <= pc + 4;
         end
         else pc <= pc; 
     end

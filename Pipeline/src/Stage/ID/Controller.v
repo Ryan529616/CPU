@@ -12,11 +12,13 @@ module Controller(
     output reg          Branch,
     output reg          MemRead,
     output reg          MemtoReg,
-    output reg  [1:0]  MemWrite,
+    output reg  [1:0]   MemWrite,
     output reg          ALUSrc,
-    output reg          RegWrite,
+    output reg          RegWrite
+    /*
     output reg          csr_we_id2ex,
     output reg  [11:0]  csr_addr
+    */
 );
 
     assign opcode   = instruction[6:0];
