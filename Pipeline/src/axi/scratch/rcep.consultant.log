@@ -1,0 +1,252 @@
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #=============================================================================== (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE # Version information for some parts of the RCE_Plugin. (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #=============================================================================== (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE RCE RCE_Plugin : 2023.06 (2023-06-06 10:35:08) (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #=============================================================================== (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE # Workspace Environment Information (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #=============================================================================== (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE Your original Linux shell may have a DIFFERENT tool environment. (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE The state of your Linux shell tool environment is cached in your workspace  (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE when it is first created. (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE You can use the Edit - Tool Installation Paths to change the workspace environment.. (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE  (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #------------------------------------------------------------------------------- (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE # Environment Variables (from ::env) (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #------------------------------------------------------------------------------- (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE _CT_ROOT_DIR_               : /home/summer/synopsys/coretools/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE ALE_HOME                    : /home/summer/synopsys/ale/W-2024.09-SP1/bin (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE ARMLMD_LICENSE_FILE         : /home/summer/ARM/lic/armlmd.lic (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE BASH_FUNC__module_raw%%     : () {  unset _mlshdbg;
+ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then
+ case "$-" in 
+ *v*x*)
+ set +vx;
+ _mlshdbg='vx'
+ ;;
+ *v*)
+ set +v;
+ _mlshdbg='v'
+ ;;
+ *x*)
+ set +x;
+ _mlshdbg='x'
+ ;;
+ *)
+ _mlshdbg=''
+ ;;
+ esac;
+ fi;
+ unset _mlre _mlIFS;
+ if [ -n "${IFS+x}" ]; then
+ _mlIFS=$IFS;
+ fi;
+ IFS=' ';
+ for _mlv in ${MODULES_RUN_QUARANTINE:-};
+ do
+ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then
+ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then
+ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";
+ fi;
+ _mlrv="MODULES_RUNENV_${_mlv}";
+ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";
+ fi;
+ done;
+ if [ -n "${_mlre:-}" ]; then
+ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;
+ else
+ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;
+ fi;
+ _mlstatus=$?;
+ if [ -n "${_mlIFS+x}" ]; then
+ IFS=$_mlIFS;
+ else
+ unset IFS;
+ fi;
+ unset _mlre _mlv _mlrv _mlIFS;
+ if [ -n "${_mlshdbg:-}" ]; then
+ set -$_mlshdbg;
+ fi;
+ unset _mlshdbg;
+ return $_mlstatus
+} (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE BASH_FUNC_ml%%              : () {  module ml "$@"
+} (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE BASH_FUNC_module%%          : () {  _module_raw "$@" 2>&1
+} (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE BASH_FUNC_scl%%             : () {  if [ "$1" = "load" -o "$1" = "unload" ]; then
+ eval "module $@";
+ else
+ /usr/bin/scl "$@";
+ fi
+} (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE BASH_FUNC_switchml%%        : () {  typeset swfound=1;
+ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then
+ typeset swname='main';
+ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then
+ typeset swfound=0;
+ unset MODULES_USE_COMPAT_VERSION;
+ fi;
+ else
+ typeset swname='compatibility';
+ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then
+ typeset swfound=0;
+ MODULES_USE_COMPAT_VERSION=1;
+ export MODULES_USE_COMPAT_VERSION;
+ fi;
+ fi;
+ if [ $swfound -eq 0 ]; then
+ echo "Switching to Modules $swname version";
+ source /usr/share/Modules/init/bash;
+ else
+ echo "Cannot switch to Modules $swname version, command not found";
+ return 1;
+ fi
+} (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE BASH_FUNC_which%%           : () {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+} (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE Cadence_Dir                 : /home/summer/Cadence (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE CALIBRE_HOME                : /home/summer/Mentor/calibre/aok_cal_2024.1_28.16 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE CDS_2DFORM_FONT_SCALING     : 1 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE CDS_AUTO_64BIT              : ALL (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE CDS_LIC_FILE                : /home/summer/Cadence/lic/cds_license.dat (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE CDS_LOAD_ENV                : CSF (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE CDS_Netlisting_Mode         : Analog (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE COLORTERM                   : truecolor (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE CUSTOM_COMPILER_HOME        : /home/summer/synopsys/customcompiler/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DBUS_SESSION_BUS_ADDRESS    : unix:path=/run/user/1000/bus (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DC_HOME                     : /home/summer/synopsys/syn/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DELPHI_HOME                 : /home/summer/synopsys/dsoai/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DESIGNWARE_HOME             : /home/summer/synopsys/design_ware (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DESKTOP_AUTOSTART_ID        : 10b536138bb44f2c2173567559922632600000043620007 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DESKTOP_SESSION             : gnome (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DISPLAY                     : :0 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE DS_HOME                     : /home/summer/ARM/ARMDS (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE EUCLIDE_HOME                : /home/summer/synopsys/euclide/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE FLEXLM_BORROWFILE           : /home/summer/.yian-borrow.txt (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE FONTCONFIG_USE_MMAP         : 0 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE GDK_BACKEND                 : x11 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE GDM_LANG                    : zh_TW.UTF-8 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE GDMSESSION                  : gnome (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE GNOME_DESKTOP_SESSION_ID    : this-is-deprecated (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE GNOME_TERMINAL_SCREEN       : /org/gnome/Terminal/screen/995e40b6_0ebd_4c22_a347_1d65789f4a74 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE GNOME_TERMINAL_SERVICE      : :1.79 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE gui_no_close_view_types     : Frame (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE HOME                        : /home/summer (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE HSPICE_HOME                 : /home/summer/synopsys/hspice/W-2024.09/hspice (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE ICC2_HOME                   : /home/summer/synopsys/icc2/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE ICV_HOME_DIR                : /home/summer/synopsys/icvalidator/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE INDAGO_ROOT                 : /home/summer/Cadence/INDAGOA722.03 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LAKER_OA_HOME               : /home/summer/synopsys/laker_oa/2023.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LC_ALL                      : C (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LC_HOME                     : /home/summer/synopsys/lc/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LD_LIBRARY_PATH             : /home/summer/synopsys/coretools/W-2024.09/linux64/dware/shlib:/opt/Qt5.15.2/lib:/usr/lib64::/home/summer/Cadence/IC/IC_23.10.060/oa_v22.61.013/lib:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/lib:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/TPtools/libstdc++6-12.3.0/lib64:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/TPtools/gcclib-9.3.0/lib64:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/lib/64bit:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/cdsgcc/gcc/9.3/install/lib64:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/atlas/lib:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/atlas/python3/lib:/home/summer/Cadence/IC/IC_23.10.060/tools.lnx86/lib/64bit/RHEL/RHEL9/OS:/home/summer/synopsys/icc2/W-2024.09/linux64/nwtn/shlib/:/home/summer/synopsys/verdi/W-2024.09/platform/linux64/Python/lib/ (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LESSOPEN                    : ||/usr/bin/lesspipe.sh %s (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LM_LICENSE_FILE             : /home/summer/synopsys/scl/2024.06/admin/license/CIC.dat (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LOADEDMODULES               :  (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LOGNAME                     : summer (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE LS_COLORS                   : rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45: (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MANPATH                     : : (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MC2_INSTALL_DIR             : /home/summer/cell_library/MC2_2012 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MGC_FDI_OA_VERSION          : 22.61 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MGC_HOME                    : /home/summer/Mentor (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MGC_LIB_PATH                : /home/summer/Mentor/calibre/aok_cal_2024.1_28.16/lib (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MGC_LICENSE_FILE            : /home/summer/Mentor/license/license.dat (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MGLS_LICENSE_FILE           : /home/summer/Mentor/license/license.dat (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MODULEPATH                  : /etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MODULEPATH_modshare         : /usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MODULES_CMD                 : /usr/share/Modules/libexec/modulecmd.tcl (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MODULES_RUN_QUARANTINE      : LD_LIBRARY_PATH LD_PRELOAD (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MODULESHOME                 : /usr/share/Modules (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE MTI_HOME                    : /home/summer/Mentor/questa_sim-2022.4_2/questasim (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE NETDATA_CACHE_DIR           : /var/cache/netdata (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE NETDATA_STOCK_CONFIG_DIR    : /usr/lib/netdata/conf.d (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE NETDATA_USER_CONFIG_DIR     : /etc/netdata (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE NETDATA_VARLIB_DIR          : /var/lib/netdata (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE OA_BIT                      : 64 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE OA_HOME                     : /home/summer/Cadence/IC/IC_23.10.060/oa_v22.61.013 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE OA_PLUGIN_PATH              : /home/summer/Cadence/IC/IC_23.10.060/oa_v22.61.013/data/plugins (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE OLDPWD                      : /home/summer/work_dir/CPU (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE PATH                        : /home/summer/perl5/bin:/home/summer/library/SAED/MC/bin:/opt/riscv/bin:/home/summer/synopsys/vc_static/W-2024.09/bin:/home/summer/Cadence/IC/IC_23.10.060/tools/plot/bin:/home/summer/Cadence/IC/IC_23.10.060/tools/iccraft/bin:/home/summer/Cadence/IC/IC_23.10.060/tools/dracula/bin:/home/summer/Cadence/IC/IC_23.10.060/tools/dfII/bin:/home/summer/Cadence/IC/IC_23.10.060/tools/bin:/home/summer/Cadence/IC/IC_23.10.060/share/bin:/home/summer/Cadence/IC/IC_23.10.060/oa_v22.61.013/bin:/home/summer/Cadence/IC/IC_23.10.060/bin:/usr/share/Modules/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/summer/Cadence/Spectre/tools/dfII/bin:/home/summer/Cadence/Spectre/tools/bin:/home/summer/Cadence/Spectre/bin:/home/summer/Cadence/INDAGOA722.03/tools.lnx86/bin:/home/summer/Cadence/INDAGOA722.03/tools/bin:/home/summer/Cadence/JASPER/jasper_2024.03p002/bin:/home/summer/Cadence/SPECTRE/SPECTRE_23.10.477/bin:/home/summer/Cadence/DDI/bin:/home/summer/Cadence/PEGASUS/bin:/home/summer/Cadence/SSV/SSV_23.11.000/bin:/home/summer/Cadence/QUANTUS/QUANTUS_23.11.000/bin:/home/summer/Cadence/STRATUS/STRATUS_23.02.004/bin:/home/summer/Mentor/calibre/aok_cal_2024.1_28.16/bin:/home/summer/Mentor/questa_sim-2022.4_2/questasim/bin:/home/summer/synopsys/3dic/W-2024.09-SP1/bin:/home/summer/synopsys/asip_designer/V-2024.06-SP1/linux64/bin:/home/summer/synopsys/coretools/W-2024.09/bin:/home/summer/synopsys/customcompiler/W-2024.09/bin:/home/summer/synopsys/dsoai/W-2024.09/bin:/home/summer/synopsys/fusioncompiler/W-2024.09/bin:/home/summer/synopsys/fm/W-2024.09/bin:/home/summer/synopsys/hspice/W-2024.09/hspice/bin:/home/summer/synopsys/icc2/W-2024.09/bin:/home/summer/synopsys/icvalidator/W-2024.09/bin:/home/summer/synopsys/icv_wb/2023.09-sp2/bin:/home/summer/synopsys/laker_oa/2023.09/bin:/home/summer/synopsys/lc/W-2024.09/bin:/home/summer/synopsys/primetime/2023.12-sp2/bin:home/summer/synopsys/primewave/W-2024.09/bin:/home/summer/synopsys/rtl_arch/2023.12/bin:/home/summer/synopsys/starrc/W-2024.09/bin:/home/summer/synopsys/syn/W-2024.09/bin:/home/summer/synopsys/vcs/W-2024.09/bin:/home/summer/synopsys/verdi/W-2024.09/bin:/home/summer/synopsys/spyglass/W-2024.09/SPYGLASS_HOME/bin:/home/summer/synopsys/scl/2024.06/linux64/bin:/home/summer/cell_library/SAED/MC/bin:/home/summer/ARM/ARMDS/bin:/home/summer/ARM/Socrates (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE PERL5LIB                    : /home/summer/perl5/lib/perl5 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE PERL_LOCAL_LIB_ROOT         : /home/summer/perl5 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE PERL_MB_OPT                 : --install_base "/home/summer/perl5" (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE PERL_MM_OPT                 : INSTALL_BASE=/home/summer/perl5 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE PRIMEWAVE_HOME              : home/summer/synopsys/primewave/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE PWD                         : /home/summer/work_dir/CPU/Pipeline/src (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE QT_IM_MODULE                : ibus (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE QT_PLUGIN_PATH              : /home/summer/synopsys/coretools/W-2024.09/linux64/dware/plugins (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE QT_QPA_PLATFORM             : xcb (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE QT_QPA_PLATFORM_PLUGIN_PATH : /home/summer/synopsys/coretools/W-2024.09/linux64/dware/plugins/platforms (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE QT_XCB_NATIVE_PAINTING      : 1 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE RISCV                       : /opt/riscv (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE S_COLORS                    : auto (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SAED14_PDK                  : /home/summer/cell_library/SAED/MC/etc/techs/SAED14_PDK (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SAED32_28_PDK               : /home/summer/cell_library/SAED/32/SAED_PDK32nm (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SCL_HOME                    : /home/summer/synopsys/scl/2024.06 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SHELL                       : /bin/bash (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SHLVL                       : 1 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SNPS_ARCH                   : linux64 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SNPSLMD_LICENSE_FILE        : 27020@yian (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SPECTRE_HOME                : /home/summer/Cadence/Spectre (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SPYGLASS_HOME               : /home/summer/synopsys/spyglass/W-2024.09/SPYGLASS_HOME (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SSH_ASKPASS                 : /usr/libexec/openssh/gnome-ssh-askpass (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SSH_AUTH_SOCK               : /run/user/1000/keyring/ssh (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE synopsys                    : /home/summer/synopsys (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE synopsys_TMAX               : /home/summer/synopsys/txs/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE SYNOPSYS_TRACE              :  (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE TERM                        : xterm-256color (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE USER                        : summer (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE USERNAME                    : summer (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE VC_STATIC_HOME              : /home/summer/synopsys/vc_static/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE VCS_ARCH_OVERRIDE           : linux (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE VCS_HOME                    : /home/summer/synopsys/vcs/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE VERDI_HOME                  : /home/summer/synopsys/verdi/W-2024.09 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE VERILATOR_ROOT              : /usr/local/share/verilator (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE Virtuoso_HOME               : /home/summer/Cadence/IC/IC_23.10.060 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE VTE_VERSION                 : 5204 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE which_declare               : declare -f (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE WINDOWPATH                  : 2 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XAUTHORITY                  : /run/user/1000/gdm/Xauthority (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_CURRENT_DESKTOP         : GNOME (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_DATA_DIRS               : /home/summer/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share/:/usr/share/ (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_MENU_PREFIX             : gnome- (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_RUNTIME_DIR             : /run/user/1000 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_SEAT                    : seat0 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_SESSION_DESKTOP         : gnome (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_SESSION_ID              : 2 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_SESSION_TYPE            : x11 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XDG_VTNR                    : 2 (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE XMODIFIERS                  : @im=ibus (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE  (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #------------------------------------------------------------------------------- (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE # Tool Version Information) (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE #------------------------------------------------------------------------------- (::RCE_202306::hookOpenCreateWorkspace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | Tool          | Min | Max | Arch | Path                                                                | Verify Tool | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE ------------------------------------------------------------------------------------------------------------------------ (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | dc_shell      |     |     | 64   | /home/summer/synopsys/syn/W-2024.09/bin/dc_shell                    |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | dc_shell-t    |     |     | 64   | /home/summer/synopsys/syn/W-2024.09/bin/dc_shell-t                  |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | de_shell      |     |     | 64   | /home/summer/synopsys/syn/W-2024.09/bin/de_shell                    |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | dft_shell     |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | fc_shell      |     |     | 64   | /home/summer/synopsys/fusioncompiler/W-2024.09/bin/fc_shell         |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | fm_shell      |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | leda          |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | mvtools       |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | ncsim         |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | protocompiler |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | pt_shell      |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | rtl_shell     |     |     | 64   | /home/summer/synopsys/rtl_arch/2023.12/bin/rtl_shell                |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | spyglass      |     |     | 64   | /home/summer/synopsys/spyglass/W-2024.09/SPYGLASS_HOME/bin/spyglass |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | synplify      |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | tcm           |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | tmax          |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | vcs           |     |     | 32   | /home/summer/synopsys/vcs/W-2024.09/bin/vcs                         |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | vcsi          |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | vcstatic      |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | vera          |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | verdi         |     |     | 64   | /home/summer/synopsys/verdi/W-2024.09/bin/verdi                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | vivado        |     |     | 32   |                                                                     |             | (namespace)
+[DW_axi RCEP Jan-01 04:34:54   0] FILE | vsim          |     |     | 32   | /home/summer/Mentor/questa_sim-2022.4_2/questasim/bin/vsim          |             | (namespace)
+[DW_axi RCEP Jan-01 04:44:18   7] DBG  verify_tool fc_shell -min T-2022.03-SP5 (::RCE_202306::verify_implementation_tool_versions)
+[DW_axi RCEP Jan-01 04:44:18   7] DBG  1
+ (::RCE_202306::verify_implementation_tool_versions)

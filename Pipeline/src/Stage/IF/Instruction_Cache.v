@@ -1,5 +1,3 @@
-`include "../../general/CacheCore.v"
-
 module Instruction_Cache #(
     parameter DATA_LENGTH = 32,
     parameter CACHE_SIZE  = 32 * 1024,   // iCache大小(32KB)

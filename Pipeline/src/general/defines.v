@@ -26,6 +26,12 @@
 `define SRA     5'b01000
 `define OR      5'b01001
 `define AND     5'b01010
+`define BEQ     5'b01011
+`define BNE     5'b01100
+`define BLT     5'b01101
+`define BGE     5'b01110
+`define BLTU    5'b01111
+`define BGEU    5'b10000
 `define LUI_ALUOP 5'b10001
 
 `define WRITE_IDLE  2'b00

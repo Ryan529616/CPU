@@ -1,5 +1,3 @@
-`include "../defines.v"
-
 module Branch_Comparator (
     input [2:0]   funct3,
     input [6:0]   opcode,

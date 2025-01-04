@@ -1,0 +1,1 @@
+/home/summer/synopsys/design_ware/iip/DW_axi/4.06a/scratch/rce/perl/testJSONLib/lib/readme.txt

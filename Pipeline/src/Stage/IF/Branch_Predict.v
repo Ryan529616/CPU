@@ -1,15 +1,14 @@
 `define STRONGLY_NOT_TAKEN  2'b00 
-`define WEAKLY_NOT_TAKEN       2'b01  
-`define WEAKLY_TAKEN                2'b10  
-`define STRONGLY_TAKEN           2'b11
+`define WEAKLY_NOT_TAKEN    2'b01  
+`define WEAKLY_TAKEN        2'b10  
+`define STRONGLY_TAKEN      2'b11
 
 module Branch_Predict (
     input clk,                   
     input rst,                  
     input branch_taken,
     input branch,
-    output reg branch_prediction,
-
+    output reg branch_prediction
 );
     reg [1:0] current_state, next_state;
 

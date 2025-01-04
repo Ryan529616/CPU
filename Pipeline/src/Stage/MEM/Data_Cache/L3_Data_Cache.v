@@ -1,5 +1,3 @@
-`include "../../general/CacheCore.v"
-
 module L3_Data_Cache #(
     parameter DATA_LENGTH = 32,
     parameter CACHE_SIZE  = 32 * 1024 * 1024,  // 預設 32MB

@@ -1,5 +1,3 @@
-`include "../defines.v"
-
 module Controller(
     input           nop,
     input   [31:0]  instruction,
@@ -8,13 +6,14 @@ module Controller(
     output  [4:0]   rs2,
     output  [4:0]   rd,
     output  [2:0]   funct3,
-    output  [6:0]   funct7
+    output  [6:0]   funct7,
     output reg          Branch,
     output reg          MemRead,
     output reg          MemtoReg,
     output reg  [1:0]   MemWrite,
     output reg          ALUSrc,
-    output reg          RegWrite
+    output reg          RegWrite,
+    output reg          PC2Reg
     /*
     output reg          csr_we_id2ex,
     output reg  [11:0]  csr_addr
@@ -35,16 +34,16 @@ module Controller(
         end
         else begin
             case(opcode)
-                `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00011;
-                `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00011;
-                `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b10011;
-                `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b10011;
-                `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b10010;
-                `LOAD:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b01111;
-                `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00010;
-                `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00011;
-                `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00001;
-                default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite} = 5'b00000;
+                `LUI:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b000110;
+                `AUIPC: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b000111;
+                `JAL:   {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b100111;
+                `JALR:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b100111;
+                `BRANCH:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b100100;
+                `LOAD:  {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b011110;
+                `STORE: {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b000100;
+                `OP_IMM:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b000110;
+                `OP:    {Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b000010;
+                default:{Branch,MemRead,MemtoReg,ALUSrc,RegWrite,PC2Reg} = 6'b000000;
             endcase
         end
     end

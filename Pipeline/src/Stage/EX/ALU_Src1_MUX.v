@@ -1,6 +1,6 @@
 module ALU_Src1_MUX (
     input  wire        ALU_Src,
-    input  wire  [1:0] FowardA,
+    input  wire  [1:0] ForwardA,
     input  wire [31:0] Read_data_1,
     input  wire [31:0] rd_data,
     input  wire [31:0] Write_data,

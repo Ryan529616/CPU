@@ -1,5 +1,3 @@
-`include "defines.v"
-
 module LD_Filter(
     input       [2:0]   funct3,
     input       [31:0]  load_data,

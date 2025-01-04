@@ -1,10 +1,8 @@
-`include "defines.v"
-
 module ALU (
     input  wire  [4:0] ALUOp,
     input  wire [31:0] rs1_data,
     input  wire [31:0] rs2_data,
-    output reg  [31:0] rd_data,
+    output reg  [31:0] rd_data
 );
     always @* begin
         rd_data = 32'b0;

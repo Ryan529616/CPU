@@ -1,5 +1,3 @@
-`include "../../general/CacheCore.v"
-
 module L1_Data_Cache #(
     parameter DATA_LENGTH = 32,
     parameter CACHE_SIZE  = 48 * 1024,

@@ -1,0 +1,6 @@
+set ::sHtml::reports(IO) [list I/O {This report includes a symbolic
+view of the component and tables documenting the ports
+of the component and key attributes of those ports such
+as size, directionality, etc.} ./IO.html]
+set ::sHtml::reports(ComponentConfiguration) [list {Component Configuration} {This report documents component configuration choices and
+includes parameter descriptions and default values.} ./ComponentConfiguration.html]

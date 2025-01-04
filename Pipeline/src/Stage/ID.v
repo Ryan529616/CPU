@@ -1,10 +1,3 @@
-`include "ID/ALU_Controller.v"
-`include "ID/Branch_Comparator.v"
-`include "ID/Controller.v"
-`include "ID/Hazard_Detection_Unit.v"
-`include "ID/RegFile.v"
-//`include "ID/CSR_RegFile.v"
-
 module ID (
     input         clk,
     input         rst,
@@ -13,6 +6,7 @@ module ID (
     input  [31:0] instruction,
     input  [31:0] pc,
     input  [31:0] Write_data,
+    input         MemRead_ex,
 
     output [6:0]  opcode,
     output [4:0]  rs1,
@@ -25,7 +19,7 @@ module ID (
 
     output        branch_taken,
     
-////Control Signals
+    // Control Signals
     output        Branch,
     output        MemRead,
     output        MemtoReg,
@@ -33,27 +27,23 @@ module ID (
     output        ALUSrc,
     output        RegWrite,
     output [4:0]  ALUOp,
-
-/*
-////CSR_Regfile
-    output [31:0] csr_rd,
-    output [31:0] clint_csr_mstatus,
-    output [31:0] clint_csr_mepc,
-    output [31:0] clint_csr_mtvec,
-    output        interrupt_enable,
-
-*/
-
+    output        PC2Reg,
+    output        PC_Write,
+    output        IF_ID_Write,
+    output        flush
 );
+    wire nop;
 
-    ALU_Controller alu_controller(
+    // ALU Controller
+    ALU_Controller alu_controller (
         .funct7(funct7), 
         .funct3(funct3), 
         .opcode(opcode), 
         .ALUOp(ALUOp)
     );
 
-    Branch_Comparator branch_comparator(
+    // Branch Comparator
+    Branch_Comparator branch_comparator (
         .funct3(funct3), 
         .opcode(opcode), 
         .Read_data_1(Read_data_1), 
@@ -61,7 +51,8 @@ module ID (
         .branch_taken(branch_taken)
     );
 
-    Controller controller(
+    // Controller
+    Controller controller (
         .nop(nop), 
         .instruction(instruction), 
         .opcode(opcode), 
@@ -75,36 +66,16 @@ module ID (
         .MemtoReg(MemtoReg), 
         .MemWrite(MemWrite), 
         .ALUSrc(ALUSrc), 
-        .RegWrite(RegWrite)
-        /*
-        .csr_we_id2ex(csr_we_id2ex), 
-        .csr_addr(csr_addr)
-        */
+        .RegWrite(RegWrite),
+        .PC2Reg(PC2Reg)
     );
-/*
-    CSR csr(
-        .clk(clk), 
-        .rst(rst), 
-        .csr_we_ex(csr_we_ex), 
-        .csr_ra_id(csr_ra_id), 
-        .csr_wa_ex(csr_wa_ex), 
-        .csr_wd_ex(csr_wd_ex), 
-        .we_clint(we_clint), 
-        .wa_clint(wa_clint), 
-        .wd_clint(wd_clint), 
-        .csr_rd(csr_rd), 
-        .clint_csr_mstatus(clint_csr_mstatus), 
-        .clint_csr_mepc(clint_csr_mepc), 
-        .clint_csr_mtvec(clint_csr_mtvec), 
-        .interrupt_enable(interrupt_enable)
-    );
-*/
 
-    Hazard_Detection_Unit hazard_detection_unit(
+    // Hazard Detection Unit
+    Hazard_Detection_Unit hazard_detection_unit (
         .rs1(rs1), 
         .rs2(rs2), 
         .rd_ex(rd_out), 
-        .MemRead_ex(MemRead), 
+        .MemRead_ex(MemRead_ex),
         .branch_taken(branch_taken), 
         .branch_prediction(branch_taken), 
         .nop(nop), 
@@ -113,7 +84,8 @@ module ID (
         .PC_Write(PC_Write)
     );
 
-    RegFile regfile(
+    // Register File
+    RegFile regfile (
         .clk(clk),
         .rst(rst),
         .Read_register_1(rs1), 
@@ -124,7 +96,5 @@ module ID (
         .Read_data_1(Read_data_1), 
         .Read_data_2(Read_data_2)
     );
-
-
 
 endmodule

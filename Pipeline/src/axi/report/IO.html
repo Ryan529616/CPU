@@ -1,0 +1,1419 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Signals for DW_axi</title><link rel="stylesheet" type="text/css" href="html.css"><meta name="generator" content="DocBook XSL Stylesheets V1.79.1"><link rel="home" href="#idp47165072" title="Signals for DW_axi"><link rel="next" href="#Signal-Descriptions" title=""></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="article"><div class="titlepage"><div><div><h2 class="title"><a name="idp47165072"></a>Signals for DW_axi</h2></div></div><hr></div><div class="sect1"><div class="titlepage"></div><p>Provides a description of the DW_axi signals.</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><a class="link" href="#signaltable-ClocksandResets" title="Table 1. Clocks and Resets Signals">Clocks and Resets</a></li><li class="listitem"><a class="link" href="#signaltable-PrimaryPortxWriteAddressChannel" title="Table 2. Primary Port x Write Address Channel (for x = 1; x &lt;= 2) Signals">Primary Port x Write Address Channel</a></li><li class="listitem"><a class="link" href="#signaltable-PrimaryPortxWriteDataChannel" title="Table 3. Primary Port x Write Data Channel (for x = 1; x &lt;= 2) Signals">Primary Port x Write Data Channel</a></li><li class="listitem"><a class="link" href="#signaltable-PrimaryPortxWriteResponseChannel" title="Table 4. Primary Port x Write Response Channel (for x = 1; x &lt;= 2) Signals">Primary Port x Write Response Channel</a></li><li class="listitem"><a class="link" href="#signaltable-PrimaryPortxReadAddressChannel" title="Table 5. Primary Port x Read Address Channel (for x = 1; x &lt;= 2) Signals">Primary Port x Read Address Channel</a></li><li class="listitem"><a class="link" href="#signaltable-PrimaryPortxReadDataChannel" title="Table 6. Primary Port x Read Data Channel (for x = 1; x &lt;= 2) Signals">Primary Port x Read Data Channel</a></li><li class="listitem"><a class="link" href="#signaltable-SecondaryPortjWriteAddressChannel" title="Table 7. Secondary Port j Write Address Channel Signals">Secondary Port j Write Address Channel</a></li><li class="listitem"><a class="link" href="#signaltable-SecondaryPortjWriteDataChannel" title="Table 8. Secondary Port j Write Data Channel Signals">Secondary Port j Write Data Channel</a></li><li class="listitem"><a class="link" href="#signaltable-SecondaryPortjWriteResponseChannel" title="Table 9. Secondary Port j Write Response Channel Signals">Secondary Port j Write Response Channel</a></li><li class="listitem"><a class="link" href="#signaltable-SecondaryPortjReadAddressChannel" title="Table 10. Secondary Port j Read Address Channel Signals">Secondary Port j Read Address Channel</a></li><li class="listitem"><a class="link" href="#signaltable-SecondaryPortjReadDataChannel" title="Table 11. Secondary Port j Read Data Channel Signals">Secondary Port j Read Data Channel</a></li><li class="listitem"><a class="link" href="#signaltable-DefaultSubordinateWriteAddressChannel" title="Table 12. Default Subordinate Write Address Channel Signals">Default Subordinate Write Address Channel</a></li><li class="listitem"><a class="link" href="#signaltable-DefaultSubordinateWriteDataChannel" title="Table 13. Default Subordinate Write Data Channel Signals">Default Subordinate Write Data Channel</a></li><li class="listitem"><a class="link" href="#signaltable-DefaultSubordinateWriteResponseChannel" title="Table 14. Default Subordinate Write Response Channel Signals">Default Subordinate Write Response Channel</a></li><li class="listitem"><a class="link" href="#signaltable-DefaultSubordinateReadAddressChannel" title="Table 15. Default Subordinate Read Address Channel Signals">Default Subordinate Read Address Channel</a></li><li class="listitem"><a class="link" href="#signaltable-DefaultSubordinateReadDataChannel" title="Table 16. Default Subordinate Read Data Channel Signals">Default Subordinate Read Data Channel</a></li><li class="listitem"><a class="link" href="#signaltable-DebugInterface" title="Table 17. Debug Interface Signals">Debug Interface</a></li></ul></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-ClocksandResets"></a>Clocks and Resets Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-ClocksandResets"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#aclk">aclk</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#aresetn">aresetn</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-ClocksandResets"></a><p class="title"><b>Table 1. Clocks and Resets Signals</b></p><div class="table-contents"><table class="table" summary="Clocks and Resets Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="aclk"></a>aclk</p></td><td>I</td><td>
+              <p>AXI Clock Signal. All input signals are sampled on the rising edge of aclk. All output signals must occur after the rising edge of aclk. There must be no combinatorial paths between input and output signals on both manager and subordinate interfaces.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="aresetn"></a>aresetn</p></td><td>I</td><td>
+              <p>AXI Reset Signal. The bus reset signal is active low and is used to reset the system and the bus. During reset, the following must occur:  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+A manager interface must drive arvalid, awvalid, and wvalid low. 
+</li><li class="listitem">
+A subordinate interface must drive rvalid and bvalid low. 
+</li></ul></div><p>
+ Asynchronous assertion, synchronous de-assertion. The reset must be deasserted synchronously after the rising edge of aclk. DW_axi does not contain logic to perform this synchronization, so it must be provided externally.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>N/A</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>Low</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-PrimaryPortxWriteAddressChannel"></a>Primary Port x Write Address Channel (for x = 1; x &lt;= 2) Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-PrimaryPortxWriteAddressChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#awvalid_mx">awvalid_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awready_mx">awready_mx</a></td></tr><tr><td align="right"><a class="link" href="#awaddr_mx">awaddr_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#awid_mx">awid_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#awlen_mx">awlen_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#awsize_mx">awsize_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#awburst_mx">awburst_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#awlock_mx">awlock_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#awcache_mx">awcache_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#awprot_mx">awprot_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-PrimaryPortxWriteAddressChannel"></a><p class="title"><b>Table 2. Primary Port x Write Address Channel (for x = 1; x &lt;= 2) Signals</b></p><div class="table-contents"><table class="table" summary="Primary Port x Write Address Channel (for x = 1; x &lt;= 2) Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="awvalid_mx"></a>awvalid_mx</p></td><td>I</td><td>
+              <p>Manager write address valid. This signal indicates that a valid write address and control information are available.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Address and control information available 
+</li><li class="listitem">
+0: Address and control information unavailable. 
+</li></ul></div><p>
+ The address and control information remain stable until the address acknowledge signal, awready, goes high.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="awaddr_mx"></a>awaddr_mx[31:0]</p></td><td>I</td><td>
+              <p>Manager write address. The write address bus gives the address of the first transfer in a write burst transaction. The associated control signals are used to determine the addresses of the remaining transfers in the burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awid_mx"></a>awid_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager write address ID. This signal is the identification tag for the write address group of signals.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awlen_mx"></a>awlen_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager burst length. The burst length gives the exact number of transfers in a burst. This information determines the number of data transfers associated with
+the address. The AXI protocol specifies this as a 4 bit value, but this width can be configured to 8 bits wide to support longer bursts up to 256 data beats.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awsize_mx"></a>awsize_mx[2:0]</p></td><td>I</td><td>
+              <p>Manager burst size. This signal indicates the size of each transfer in the burst. Byte lane strobes indicate exactly which byte lanes to update.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awburst_mx"></a>awburst_mx[1:0]</p></td><td>I</td><td>
+              <p>Manager burst type. The burst type, coupled with the size information, details how the address for each transfer within the burst is calculated.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awlock_mx"></a>awlock_mx[1:0]</p></td><td>I</td><td>
+              <p>Manager lock type. This signal provides additional information about the atomic characteristics of the transfer. The signal width and functionality changes
+between the AXI3 and AXI4/ACE-Lite interface types. For more information, refer to 'Locked Transfers' section in the DW_axi Databook.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awcache_mx"></a>awcache_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager cache type. This signal indicates the bufferable, cacheable/modifiable, write-through, write-back, and allocatable attributes of the transaction.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awprot_mx"></a>awprot_mx[2:0]</p></td><td>I</td><td>
+              <p>Manager protection type. This signal indicates the normal, privileged, or secure protection level of the transaction and whether the transaction is a data access or an instruction access.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+            </td></tr><tr><td><p><a name="awready_mx"></a>awready_mx</p></td><td>O</td><td>
+              <p>Manager write address ready. This signal indicates that the subordinate is ready to accept an address and associated control signals.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Subordinate ready
+</li><li class="listitem">
+0: Subordinate not ready
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_AW_TMO is not Combinatorial or AXI_AW_PL_ARB is true, then the default value is high.
+When AXI_AW_TMO is Combinatorial and AXI_AW_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-PrimaryPortxWriteDataChannel"></a>Primary Port x Write Data Channel (for x = 1; x &lt;= 2) Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-PrimaryPortxWriteDataChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#wvalid_mx">wvalid_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#wready_mx">wready_mx</a></td></tr><tr><td align="right"><a class="link" href="#wid_mx">wid_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#wdata_mx">wdata_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#wstrb_mx">wstrb_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#wlast_mx">wlast_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-PrimaryPortxWriteDataChannel"></a><p class="title"><b>Table 3. Primary Port x Write Data Channel (for x = 1; x &lt;= 2) Signals</b></p><div class="table-contents"><table class="table" summary="Primary Port x Write Data Channel (for x = 1; x &lt;= 2) Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="wvalid_mx"></a>wvalid_mx</p></td><td>I</td><td>
+              <p>Manager write valid. This signal indicates that valid write data and strobes are available.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Write data and strobes available 
+</li><li class="listitem">
+0: Write data and strobes unavailable
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="wid_mx"></a>wid_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager write ID tag. This signal is the ID tag of the write data transfer. The WID value must match the AWID value of the write transaction.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="wdata_mx"></a>wdata_mx[31:0]</p></td><td>I</td><td>
+              <p>Manager write data.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="wstrb_mx"></a>wstrb_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager write strobes. This signal indicates which byte lanes to update in memory. There is one write strobe for each eight bits of the write data bus. Therefore, wstrb_m(x) corresponds to wdata_m[(8 * x) +7:(8 * x)].</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="wlast_mx"></a>wlast_mx</p></td><td>I</td><td>
+              <p>Manager write last. This signal indicates the last transfer in a write burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="wready_mx"></a>wready_mx</p></td><td>O</td><td>
+              <p>Manager write ready. This signal indicates that the subordinate can accept the write data.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Subordinate ready 
+</li><li class="listitem">
+0: Subordinate not ready
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_W_TMO is not Combinatorial or AXI_W_PL_ARB is true, then the default value is low.
+When AXI_W_TMO is Combinatorial and AXI_W_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-PrimaryPortxWriteResponseChannel"></a>Primary Port x Write Response Channel (for x = 1; x &lt;= 2) Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-PrimaryPortxWriteResponseChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#bready_mx">bready_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#bvalid_mx">bvalid_mx</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#bid_mx">bid_mx</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#bresp_mx">bresp_mx</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-PrimaryPortxWriteResponseChannel"></a><p class="title"><b>Table 4. Primary Port x Write Response Channel (for x = 1; x &lt;= 2) Signals</b></p><div class="table-contents"><table class="table" summary="Primary Port x Write Response Channel (for x = 1; x &lt;= 2) Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="bvalid_mx"></a>bvalid_mx</p></td><td>O</td><td>
+              <p>Manager write response valid. This signal indicates that the valid write response is available.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Write response available 
+</li><li class="listitem">
+0: Write response unavailable
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_B_TMO is not Combinatorial or AXI_B_PL_ARB is true, then the default value is low.
+When AXI_B_TMO is Combinatorial and AXI_B_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="bid_mx"></a>bid_mx[3:0]</p></td><td>O</td><td>
+              <p>Manager response ID tag. This signal is the ID tag of the write response. The BID value must match the AWID value of the write transaction to which the subordinate is responding.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="bresp_mx"></a>bresp_mx[1:0]</p></td><td>O</td><td>
+              <p>Manager write response. This signal indicates the status of the write transaction. The allowable responses are OKAY, EXOKAY, SLVERR, and DECERR.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="bready_mx"></a>bready_mx</p></td><td>I</td><td>
+              <p>Manager response ready. This signal indicates that the manager can accept the response information.
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Manager ready 
+</li><li class="listitem">
+0: Manager not ready
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-PrimaryPortxReadAddressChannel"></a>Primary Port x Read Address Channel (for x = 1; x &lt;= 2) Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-PrimaryPortxReadAddressChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#arvalid_mx">arvalid_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arready_mx">arready_mx</a></td></tr><tr><td align="right"><a class="link" href="#arid_mx">arid_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#araddr_mx">araddr_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#arlen_mx">arlen_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#arsize_mx">arsize_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#arburst_mx">arburst_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#arlock_mx">arlock_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#arcache_mx">arcache_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#arprot_mx">arprot_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-PrimaryPortxReadAddressChannel"></a><p class="title"><b>Table 5. Primary Port x Read Address Channel (for x = 1; x &lt;= 2) Signals</b></p><div class="table-contents"><table class="table" summary="Primary Port x Read Address Channel (for x = 1; x &lt;= 2) Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="arvalid_mx"></a>arvalid_mx</p></td><td>I</td><td>
+              <p>Manager read address valid. This signal indicates that a valid read address and control information are available.
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Address and control information available 
+</li><li class="listitem">
+0: Address and control information unavailable 
+</li></ul></div><p>
+The address and control information remain stable until the address acknowledge signal, arready, goes high.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="arid_mx"></a>arid_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager read address ID. This signal is the identification tag for the read address group of signals.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="araddr_mx"></a>araddr_mx[31:0]</p></td><td>I</td><td>
+              <p>Manager read address. The read address bus gives the address of the first transfer in a read burst transaction. The associated control signals are used to determine the addresses of the remaining transfers in the burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arlen_mx"></a>arlen_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager burst length. The burst length gives the exact number of transfers in a burst. This information determines the number of data transfers associated with the address. The AXI protocol specifies this as a 4 bit value, but this width can be configured to 8 bits wide to support longer bursts up to 256 data beats.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arsize_mx"></a>arsize_mx[2:0]</p></td><td>I</td><td>
+              <p>Manager burst size. This signal indicates the size of each transfer in the burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arburst_mx"></a>arburst_mx[1:0]</p></td><td>I</td><td>
+              <p>Manager burst type. The burst type, coupled with the size information, details how the address for each transfer within the burst is calculated.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arlock_mx"></a>arlock_mx[1:0]</p></td><td>I</td><td>
+              <p>Manager lock type. This signal provides additional information about the atomic characteristics of the transfer. The signal width and functionality changes
+between the AXI3 and AXI4/ACE-Lite interface types; for more information, refer to the 'Locked Transfers' section in the DW_axi Databook.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arcache_mx"></a>arcache_mx[3:0]</p></td><td>I</td><td>
+              <p>Manager read cache type. This signal indicates the bufferable, cacheable/modifiable, write-through, write-back, and allocatable attributes of the transaction.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arprot_mx"></a>arprot_mx[2:0]</p></td><td>I</td><td>
+              <p>Manager protection type. This signal indicates the normal, privileged, or secure protection level of the transaction and whether the transaction is a data access or an instruction access.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arready_mx"></a>arready_mx</p></td><td>O</td><td>
+              <p>Manager read address ready. This signal indicates that the subordinate is ready to accept an address and associated control signals.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Subordinate ready 
+</li><li class="listitem">
+0: Subordinate not ready
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_AR_TMO is not Combinatorial or AXI_AR_PL_ARB is true, then the default value is high.
+When AXI_AR_TMO is Combinatorial and AXI_AR_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-PrimaryPortxReadDataChannel"></a>Primary Port x Read Data Channel (for x = 1; x &lt;= 2) Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-PrimaryPortxReadDataChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#rready_mx">rready_mx</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#rvalid_mx">rvalid_mx</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#rid_mx">rid_mx</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#rdata_mx">rdata_mx</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#rresp_mx">rresp_mx</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#rlast_mx">rlast_mx</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-PrimaryPortxReadDataChannel"></a><p class="title"><b>Table 6. Primary Port x Read Data Channel (for x = 1; x &lt;= 2) Signals</b></p><div class="table-contents"><table class="table" summary="Primary Port x Read Data Channel (for x = 1; x &lt;= 2) Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="rvalid_mx"></a>rvalid_mx</p></td><td>O</td><td>
+              <p>Manager read valid. This signal indicates that the required read data is available and the read transfer can complete.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: read data available 
+</li><li class="listitem">
+0: read data not available
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_R_TMO is not Combinatorial or AXI_R_PL_ARB is true, then the default value is low.
+When AXI_R_TMO is Combinatorial and AXI_R_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="rid_mx"></a>rid_mx[3:0]</p></td><td>O</td><td>
+              <p>Manager read ID tag. This signal is the ID tag of the read data group of signals. The RID value is generated by the subordinate and must match the ARID value of the read transaction to which it is responding.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="rdata_mx"></a>rdata_mx[31:0]</p></td><td>O</td><td>
+              <p>Manager read data.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="rresp_mx"></a>rresp_mx[1:0]</p></td><td>O</td><td>
+              <p>Manager read response. This signal indicates the status of the read transfer. The allowable responses are OKAY, EXOKAY, SLVERR, and DECERR.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="rlast_mx"></a>rlast_mx</p></td><td>O</td><td>
+              <p>Manager read last. This signal indicates the last transfer in a read burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="rready_mx"></a>rready_mx</p></td><td>I</td><td>
+              <p>Manager read ready. This signal indicates that the manager can accept the read data and response information.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Manager ready 
+</li><li class="listitem">
+0: Manager no ready
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-SecondaryPortjWriteAddressChannel"></a>Secondary Port j Write Address Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-SecondaryPortjWriteAddressChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#awready_s1">awready_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awvalid_s1">awvalid_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awaddr_s1">awaddr_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awid_s1">awid_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awlen_s1">awlen_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awsize_s1">awsize_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awburst_s1">awburst_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awlock_s1">awlock_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awcache_s1">awcache_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#awprot_s1">awprot_s1</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-SecondaryPortjWriteAddressChannel"></a><p class="title"><b>Table 7. Secondary Port j Write Address Channel Signals</b></p><div class="table-contents"><table class="table" summary="Secondary Port j Write Address Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="awvalid_s1"></a>awvalid_s1</p></td><td>O</td><td>
+              <p>Subordinate write address valid. This signal indicates that a valid write address and control information are available.
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Address and control information available. 
+</li><li class="listitem">
+0: Address and control information unavailable. 
+</li></ul></div><p>
+The address and control information remain stable until the address acknowledge signal, awready, goes high.
+</p><p class="BLANK"></p><p>Default State (after Power On Reset):
+When AXI_AW_TMO is not Combinatorial or AXI_AW_PL_ARB is true, then the default value is low.
+When AXI_AW_TMO is Combinatorial and AXI_AW_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="awaddr_s1"></a>awaddr_s1[31:0]</p></td><td>O</td><td>
+              <p>Subordinate write address. The write address bus gives the address of the first transfer in a write burst transaction. The associated control signals are used to determine the addresses of the remaining transfers in the burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awid_s1"></a>awid_s1[4:0]</p></td><td>O</td><td>
+              <p>Subordinate write address ID. This signal is the identification tag for the write address group of signals.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awlen_s1"></a>awlen_s1[3:0]</p></td><td>O</td><td>
+              <p>Subordinate burst length. The burst length gives the exact number of transfers in a burst. This information determines the number of data transfers associated with the
+address. The AXI protocol specifies this as a 4 bit value, but this width can be configured to 8 bits wide to support longer bursts up to 256 data beats.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awsize_s1"></a>awsize_s1[2:0]</p></td><td>O</td><td>
+              <p>Subordinate burst size. This signal indicates the size of each transfer in the burst. Byte lane strobes indicate exactly which byte lanes to update.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awburst_s1"></a>awburst_s1[1:0]</p></td><td>O</td><td>
+              <p>Subordinate burst type. The burst type, coupled with the size information, details how the address for each transfer within the burst is calculated.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awlock_s1"></a>awlock_s1[1:0]</p></td><td>O</td><td>
+              <p>Subordinate lock type. This signal provides additional information about the atomic characteristics of the transfer. The signal width and functionality changes between
+the AXI3 and AXI4/ACE-Lite interface types; for more information, refer to the 'Locked Transfers' section in the DW_axi Databook.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awcache_s1"></a>awcache_s1[3:0]</p></td><td>O</td><td>
+              <p>Subordinate cache type. This signal indicates the bufferable, cacheable/modifiable, write-through, write-back, and allocatable attributes of the transaction.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awprot_s1"></a>awprot_s1[2:0]</p></td><td>O</td><td>
+              <p>Subordinate protection type. This signal indicates the normal, privileged, or secure protection level of the transaction and whether the transaction is a data access or an instruction access.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="awready_s1"></a>awready_s1</p></td><td>I</td><td>
+              <p>Secondary write address ready. This signal indicates that the secondary is ready to accept an address and associated control signals.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Secondary ready 
+</li><li class="listitem">
+0: Secondary not ready
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-SecondaryPortjWriteDataChannel"></a>Secondary Port j Write Data Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-SecondaryPortjWriteDataChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#wready_s1">wready_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#wvalid_s1">wvalid_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#wid_s1">wid_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#wdata_s1">wdata_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#wstrb_s1">wstrb_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#wlast_s1">wlast_s1</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-SecondaryPortjWriteDataChannel"></a><p class="title"><b>Table 8. Secondary Port j Write Data Channel Signals</b></p><div class="table-contents"><table class="table" summary="Secondary Port j Write Data Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="wvalid_s1"></a>wvalid_s1</p></td><td>O</td><td>
+              <p>Subordinate write valid. This signal indicates that valid write data and strobes are available.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Write data and strobes available 
+</li><li class="listitem">
+0: Write data and strobes unavailable
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_W_TMO is not Combinatorial or AXI_W_PL_ARB is true, then the default value is low.
+When AXI_W_TMO is Combinatorial and AXI_W_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="wid_s1"></a>wid_s1[4:0]</p></td><td>O</td><td>
+              <p>Subordinate write ID tag. This signal is the ID tag of the write data transfer. The WID value must match the AWID value of the write transaction.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="wdata_s1"></a>wdata_s1[31:0]</p></td><td>O</td><td>
+              <p>Subordinate write data.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="wstrb_s1"></a>wstrb_s1[3:0]</p></td><td>O</td><td>
+              <p>Subordinate write strobes. This signal indicates which byte lanes to update in memory. There is one write strobe for each eight bits of the write data bus. Therefore, wstrb_s(j) corresponds to wdata_s[(8 * j) +7:(8 * j)].</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="wlast_s1"></a>wlast_s1</p></td><td>O</td><td>
+              <p>Subordinate write last. This signal indicates the last transfer in a write burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="wready_s1"></a>wready_s1</p></td><td>I</td><td>
+              <p>Subordinate write ready. This signal indicates that the subordinate can accept the write data.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Subordinate ready 
+</li><li class="listitem">
+0: Subordinate not ready
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-SecondaryPortjWriteResponseChannel"></a>Secondary Port j Write Response Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-SecondaryPortjWriteResponseChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#bvalid_s1">bvalid_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#bready_s1">bready_s1</a></td></tr><tr><td align="right"><a class="link" href="#bid_s1">bid_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#bresp_s1">bresp_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-SecondaryPortjWriteResponseChannel"></a><p class="title"><b>Table 9. Secondary Port j Write Response Channel Signals</b></p><div class="table-contents"><table class="table" summary="Secondary Port j Write Response Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="bvalid_s1"></a>bvalid_s1</p></td><td>I</td><td>
+              <p>Subordinate write response valid. This signal indicates that valid write response data is available.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Write response available 
+</li><li class="listitem">
+0: Write response unavailable
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="bid_s1"></a>bid_s1[4:0]</p></td><td>I</td><td>
+              <p>Subordinate response ID tag. This signal is the ID tag of the write response. The BID value must match the AWID value of the write transaction to which the subordinate is responding.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="bresp_s1"></a>bresp_s1[1:0]</p></td><td>I</td><td>
+              <p>Subordinate write response. This signal indicates the status of the write transaction. The allowable responses are OKAY, EXOKAY, SLVERR, and DECERR.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="bready_s1"></a>bready_s1</p></td><td>O</td><td>
+              <p>Subordinate response ready. This signal indicates that the manager can accept the response information.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Manager ready 
+</li><li class="listitem">
+0: Manager not ready
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_B_TMO is not Combinatorial or AXI_B_PL_ARB is true, then the default value of bready_s(j) is high.
+When AXI_B_TMO is Combinatorial and AXI_B_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-SecondaryPortjReadAddressChannel"></a>Secondary Port j Read Address Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-SecondaryPortjReadAddressChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#arready_s1">arready_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arvalid_s1">arvalid_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arid_s1">arid_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#araddr_s1">araddr_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arlen_s1">arlen_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arsize_s1">arsize_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arburst_s1">arburst_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arlock_s1">arlock_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arcache_s1">arcache_s1</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#arprot_s1">arprot_s1</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-SecondaryPortjReadAddressChannel"></a><p class="title"><b>Table 10. Secondary Port j Read Address Channel Signals</b></p><div class="table-contents"><table class="table" summary="Secondary Port j Read Address Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="arvalid_s1"></a>arvalid_s1</p></td><td>O</td><td>
+              <p>Subordinate read address valid. This signal indicates that a valid read address and control information are available.
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Address and control information available 
+</li><li class="listitem">
+0: Address and control information unavailable
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_AR_TMO is not Combinatorial or AXI_AR_PL_ARB is true, then the default value is low.
+When AXI_AR_TMO is Combinatorial and AXI_AR_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.
+The address and control information remain stable until the address acknowledge signal, arready, goes high.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="arid_s1"></a>arid_s1[4:0]</p></td><td>O</td><td>
+              <p>Subordinate read address ID. This signal is the identification tag for the read address group of signals.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="araddr_s1"></a>araddr_s1[31:0]</p></td><td>O</td><td>
+              <p>Subordinate read address. The read address bus gives the address of the first transfer in a read burst transaction. The associated control signals are used to determine the addresses of the remaining transfers in the burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arlen_s1"></a>arlen_s1[3:0]</p></td><td>O</td><td>
+              <p>Subordinate burst length. The burst length gives the exact number of transfers in a burst. This information determines the number of data transfers associated with the address. The AXI protocol specifies this as a 4 bit value, but this width can be configured to 8 bits wide to support longer bursts up to 256 data beats.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arsize_s1"></a>arsize_s1[2:0]</p></td><td>O</td><td>
+              <p>Subordinate burst size. This signal indicates the size of each transfer in the burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arburst_s1"></a>arburst_s1[1:0]</p></td><td>O</td><td>
+              <p>Subordinate burst type. The burst type, coupled with the size information, details how the address for each transfer within the burst is calculated.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arlock_s1"></a>arlock_s1[1:0]</p></td><td>O</td><td>
+              <p>Subordinate lock type. This signal provides additional information about the atomic characteristics of the transfer. The signal width and functionality changes between the AXI3 and AXI4/ACE-Lite interface types; for more information, refer to the 'Locked Transfers' section in the DW_axi Databook.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arcache_s1"></a>arcache_s1[3:0]</p></td><td>O</td><td>
+              <p>Subordinate read cache type. This signal indicates the bufferable, cacheable/modifiable, write-through, write-back, and allocatable attributes of the transaction.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arprot_s1"></a>arprot_s1[2:0]</p></td><td>O</td><td>
+              <p>Subordinate protection type. This signal indicates the normal, privileged, or secure protection level of the transaction and whether the transaction is a data access or an instruction access.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="arready_s1"></a>arready_s1</p></td><td>I</td><td>
+              <p>Subordinate read address ready. This signal indicates that the subordinate is ready to accept an address and associated control signals.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Subordinate ready 
+</li><li class="listitem">
+0: Subordinate not ready
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-SecondaryPortjReadDataChannel"></a>Secondary Port j Read Data Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-SecondaryPortjReadDataChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"><a class="link" href="#rvalid_s1">rvalid_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#rready_s1">rready_s1</a></td></tr><tr><td align="right"><a class="link" href="#rid_s1">rid_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#rdata_s1">rdata_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#rresp_s1">rresp_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td align="right"><a class="link" href="#rlast_s1">rlast_s1</a> -</td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td> </td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-SecondaryPortjReadDataChannel"></a><p class="title"><b>Table 11. Secondary Port j Read Data Channel Signals</b></p><div class="table-contents"><table class="table" summary="Secondary Port j Read Data Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="rvalid_s1"></a>rvalid_s1</p></td><td>I</td><td>
+              <p>Read valid. This signal indicates that the required read data is available and the read transfer can complete.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: read data available 
+</li><li class="listitem">
+0: read data not available
+</li></ul></div>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="rid_s1"></a>rid_s1[4:0]</p></td><td>I</td><td>
+              <p>Read ID tag. This signal is the ID tag of the read data group of signals. The RID value is generated by the subordinate and must match the ARID value of the read transaction to which it is responding.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="rdata_s1"></a>rdata_s1[31:0]</p></td><td>I</td><td>
+              <p>Read data.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="rresp_s1"></a>rresp_s1[1:0]</p></td><td>I</td><td>
+              <p>Read response. This signal indicates the status of the read transfer. The allowable responses are OKAY, EXOKAY, SLVERR, and DECERR.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="rlast_s1"></a>rlast_s1</p></td><td>I</td><td>
+              <p>Read last. This signal indicates the last transfer in a read burst.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="rready_s1"></a>rready_s1</p></td><td>O</td><td>
+              <p>Read ready. This signal indicates that the manager can accept the read data and response information.  
+</p><div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem">
+1: Manager ready 
+</li><li class="listitem">
+0: Manager not ready
+</li></ul></div><p>
+Default State (after Power On Reset):
+When AXI_R_TMO is not Combinatorial or AXI_R_PL_ARB is true, then the default value is high.
+When AXI_R_TMO is Combinatorial and AXI_R_PL_ARB is false, then the default value is a function of the inputs and not the state of the DW_axi.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-DefaultSubordinateWriteAddressChannel"></a>Default Subordinate Write Address Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-DefaultSubordinateWriteAddressChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awid_s0">dbg_awid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awaddr_s0">dbg_awaddr_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awlen_s0">dbg_awlen_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awsize_s0">dbg_awsize_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awburst_s0">dbg_awburst_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awlock_s0">dbg_awlock_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awcache_s0">dbg_awcache_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awprot_s0">dbg_awprot_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awvalid_s0">dbg_awvalid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_awready_s0">dbg_awready_s0</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-DefaultSubordinateWriteAddressChannel"></a><p class="title"><b>Table 12. Default Subordinate Write Address Channel Signals</b></p><div class="table-contents"><table class="table" summary="Default Subordinate Write Address Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="dbg_awid_s0"></a>dbg_awid_s0[4:0]</p></td><td>O</td><td>
+              <p>dbg_awid_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awaddr_s0"></a>dbg_awaddr_s0[31:0]</p></td><td>O</td><td>
+              <p>dbg_awaddr_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awlen_s0"></a>dbg_awlen_s0[3:0]</p></td><td>O</td><td>
+              <p>dbg_awlen_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awsize_s0"></a>dbg_awsize_s0[2:0]</p></td><td>O</td><td>
+              <p>dbg_awsize_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awburst_s0"></a>dbg_awburst_s0[1:0]</p></td><td>O</td><td>
+              <p>dbg_awburst_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awlock_s0"></a>dbg_awlock_s0[1:0]</p></td><td>O</td><td>
+              <p>dbg_awlock_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awcache_s0"></a>dbg_awcache_s0[3:0]</p></td><td>O</td><td>
+              <p>dbg_awcache_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awprot_s0"></a>dbg_awprot_s0[2:0]</p></td><td>O</td><td>
+              <p>dbg_awprot_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_awvalid_s0"></a>dbg_awvalid_s0</p></td><td>O</td><td>
+              <p>dbg_awvalid_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_awready_s0"></a>dbg_awready_s0</p></td><td>O</td><td>
+              <p>dbg_awready_s0 - See the corresponding description for 'Secondary Port j Write Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-DefaultSubordinateWriteDataChannel"></a>Default Subordinate Write Data Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-DefaultSubordinateWriteDataChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_wid_s0">dbg_wid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_wdata_s0">dbg_wdata_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_wstrb_s0">dbg_wstrb_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_wlast_s0">dbg_wlast_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_wvalid_s0">dbg_wvalid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_wready_s0">dbg_wready_s0</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-DefaultSubordinateWriteDataChannel"></a><p class="title"><b>Table 13. Default Subordinate Write Data Channel Signals</b></p><div class="table-contents"><table class="table" summary="Default Subordinate Write Data Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="dbg_wid_s0"></a>dbg_wid_s0[4:0]</p></td><td>O</td><td>
+              <p>dbg_wid_s0 - See the corresponding description for 'Secondary Port j Write Data Channel'. dbg_wid_s0 is not valid when AXI_INTERFACE_TYPE = AXI4/ACELITE.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_wdata_s0"></a>dbg_wdata_s0[31:0]</p></td><td>O</td><td>
+              <p>dbg_wdata_s0 - See the corresponding description for 'Secondary Port j Write Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_wstrb_s0"></a>dbg_wstrb_s0[3:0]</p></td><td>O</td><td>
+              <p>dbg_wstrb_s0 - See the corresponding description for 'Secondary Port j Write Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_wlast_s0"></a>dbg_wlast_s0</p></td><td>O</td><td>
+              <p>dbg_wlast_s0 - See the corresponding description for 'Secondary Port j Write Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_wvalid_s0"></a>dbg_wvalid_s0</p></td><td>O</td><td>
+              <p>dbg_wvalid_s0 - See the corresponding description for 'Secondary Port j Write Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_wready_s0"></a>dbg_wready_s0</p></td><td>O</td><td>
+              <p>dbg_wready_s0 - See the corresponding description for 'Secondary Port j Write Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-DefaultSubordinateWriteResponseChannel"></a>Default Subordinate Write Response Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-DefaultSubordinateWriteResponseChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_bid_s0">dbg_bid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_bresp_s0">dbg_bresp_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_bvalid_s0">dbg_bvalid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_bready_s0">dbg_bready_s0</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-DefaultSubordinateWriteResponseChannel"></a><p class="title"><b>Table 14. Default Subordinate Write Response Channel Signals</b></p><div class="table-contents"><table class="table" summary="Default Subordinate Write Response Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="dbg_bid_s0"></a>dbg_bid_s0[4:0]</p></td><td>O</td><td>
+              <p>dbg_bid_s0 - See the corresponding description for 'Secondary Port j Write Response Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_bresp_s0"></a>dbg_bresp_s0[1:0]</p></td><td>O</td><td>
+              <p>dbg_bresp_s0 - See the corresponding description for 'Secondary Port j Write Response Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_bvalid_s0"></a>dbg_bvalid_s0</p></td><td>O</td><td>
+              <p>dbg_bvalid_s0 - See the corresponding description for 'Secondary Port j Write Response Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_bready_s0"></a>dbg_bready_s0</p></td><td>O</td><td>
+              <p>dbg_bready_s0 - See the corresponding description for 'Secondary Port j Write Response Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-DefaultSubordinateReadAddressChannel"></a>Default Subordinate Read Address Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-DefaultSubordinateReadAddressChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arid_s0">dbg_arid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_araddr_s0">dbg_araddr_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arlen_s0">dbg_arlen_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arsize_s0">dbg_arsize_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arburst_s0">dbg_arburst_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arlock_s0">dbg_arlock_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arcache_s0">dbg_arcache_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arprot_s0">dbg_arprot_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arvalid_s0">dbg_arvalid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_arready_s0">dbg_arready_s0</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-DefaultSubordinateReadAddressChannel"></a><p class="title"><b>Table 15. Default Subordinate Read Address Channel Signals</b></p><div class="table-contents"><table class="table" summary="Default Subordinate Read Address Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="dbg_arid_s0"></a>dbg_arid_s0[4:0]</p></td><td>O</td><td>
+              <p>dbg_arid_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_araddr_s0"></a>dbg_araddr_s0[31:0]</p></td><td>O</td><td>
+              <p>dbg_araddr_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_arlen_s0"></a>dbg_arlen_s0[3:0]</p></td><td>O</td><td>
+              <p>dbg_arlen_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_arsize_s0"></a>dbg_arsize_s0[2:0]</p></td><td>O</td><td>
+              <p>dbg_arsize_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_arburst_s0"></a>dbg_arburst_s0[1:0]</p></td><td>O</td><td>
+              <p>dbg_arburst_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_arlock_s0"></a>dbg_arlock_s0[1:0]</p></td><td>O</td><td>
+              <p>dbg_arlock_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_arcache_s0"></a>dbg_arcache_s0[3:0]</p></td><td>O</td><td>
+              <p>dbg_arcache_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_arprot_s0"></a>dbg_arprot_s0[2:0]</p></td><td>O</td><td>
+              <p>dbg_arprot_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_arvalid_s0"></a>dbg_arvalid_s0</p></td><td>O</td><td>
+              <p>dbg_arvalid_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_arready_s0"></a>dbg_arready_s0</p></td><td>O</td><td>
+              <p>dbg_arready_s0 - See the corresponding description for 'Secondary Port j Read Address Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-DefaultSubordinateReadDataChannel"></a>Default Subordinate Read Data Channel Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-DefaultSubordinateReadDataChannel"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_rid_s0">dbg_rid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_rdata_s0">dbg_rdata_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_rresp_s0">dbg_rresp_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_rvalid_s0">dbg_rvalid_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_rlast_s0">dbg_rlast_s0</a></td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_rready_s0">dbg_rready_s0</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-DefaultSubordinateReadDataChannel"></a><p class="title"><b>Table 16. Default Subordinate Read Data Channel Signals</b></p><div class="table-contents"><table class="table" summary="Default Subordinate Read Data Channel Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="dbg_rid_s0"></a>dbg_rid_s0[4:0]</p></td><td>O</td><td>
+              <p>dbg_rid_s0 - See the corresponding description for 'Secondary Port j Read Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_rdata_s0"></a>dbg_rdata_s0[31:0]</p></td><td>O</td><td>
+              <p>dbg_rdata_s0 - See the corresponding description for 'Secondary Port j Read Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_rresp_s0"></a>dbg_rresp_s0[1:0]</p></td><td>O</td><td>
+              <p>dbg_rresp_s0 - See the corresponding description for 'Secondary Port j Read Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>None</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>N/A</p>
+            </td></tr><tr><td><p><a name="dbg_rvalid_s0"></a>dbg_rvalid_s0</p></td><td>O</td><td>
+              <p>dbg_rvalid_s0 - See the corresponding description for 'Secondary Port j Read Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>Yes</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_rlast_s0"></a>dbg_rlast_s0</p></td><td>O</td><td>
+              <p>dbg_rlast_s0 - See the corresponding description for 'Secondary Port j Read Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr><tr><td><p><a name="dbg_rready_s0"></a>dbg_rready_s0</p></td><td>O</td><td>
+              <p>dbg_rready_s0 - See the corresponding description for 'Secondary Port j Read Data Channel'.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="H2-sect2-signaltable-DebugInterface"></a>Debug Interface Signals</h3></div></div></div><div class="informaltable"><a name="interfacetable-DebugInterface"></a><table class="informaltable" cellspacing="0" cellpadding="0" border="0"><colgroup><col><col><col></colgroup><tbody><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr><tr><td align="right"> </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>- <a class="link" href="#dbg_active_trans">dbg_active_trans</a></td></tr><tr><td>
+            </td><td bgcolor="#C0C0C0" align="center">
+              
+              
+                <div class="literallayout"><p>            </p></div>
+            </td><td>
+            </td></tr></tbody></table></div><div class="table"><a name="signaltable-DebugInterface"></a><p class="title"><b>Table 17. Debug Interface Signals</b></p><div class="table-contents"><table class="table" summary="Debug Interface Signals" cellpadding="4" width="100%" border="1"><colgroup><col class="c1"><col class="c2"><col class="c3"></colgroup><thead><tr bgcolor="#C0C0C0"><th>Port Name</th><th>I/O</th><th>Description</th></tr></thead><tbody><tr><td><p><a name="dbg_active_trans"></a>dbg_active_trans</p></td><td>O</td><td>
+              <p>dbg_active_trans - Active Transfer debug port. This signal indicates whether there is a active transfer on the fabric.</p>
+              <p><span class="bold"><strong>Synchronous To: </strong></span>aclk</p>
+              <p><span class="bold"><strong>Registered: </strong></span>No</p>
+              <p><span class="bold"><strong>Power Domain: </strong></span>SINGLE_DOMAIN</p>
+              <p><span class="bold"><strong>Active State: </strong></span>High</p>
+            </td></tr></tbody></table></div></div><br class="table-break"></div></div></div></body></html>

@@ -1,0 +1,73 @@
+<HTML>
+<HEAD><TITLE>Design Prefix</TITLE></HEAD>
+<BODY text="#000000" bgcolor="#FFFFFF">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./snpslogo.svg" ALT="Synopsys"></td>
+   <td><div align=right>coreConsultant</div></td>
+  </tr>
+</table>
+<HR WIDTH="100%">
+<H1>Set Design, File, and Macro Prefixes</H1>
+<PRE>Set the design, file, and macro prefixes.
+The design prefix is used to make each design in your core
+have a unique name.  Setting the design prefix is only 
+needed when you need to have two or more versions of one 
+component, i.e., you plan to instantiate two or more versions
+of one component in the same design database, each with 
+different values of configuration parameters.
+
+When the RTL code is written to disk, the prefix is
+prepended to every design name reference \(and package name
+references for VHDL\). All design names and references to
+design names will be changed to {prefix}_{original name}.
+
+The macro prefix is used to replace any `define {var's} and usages
+of the `{var} with a prefixed value throughout the RTL code.</PRE><A HREF="/home/summer/synopsys/coretools/W-2024.09/doc/dware/help/cChelp_set_design_prefix.pdf">More Information...</A>
+<H0></H0>
+
+<TABLE BORDER WIDTH="100%" CELLPADDING=1 CELLSPACING=1>
+<tr>
+<td WIDTH="20%"><B>Parameter</b></td>
+<td WIDTH="80%"><B>Description</b></td>
+</tr>
+<tr>
+<td>Design prefix</td>
+<td><PRE>Name:         DesignPrefix
+Default:       (&#60;functionof&#62; trimright [&#60;functionof&#62;] _)
+Values:       
+Enabled:      [&#60;functionof&#62; {![&#60;functionof&#62; [&#60;functionof&#62;] -attr 
+              PreventDesignPrefix]}]
+
+String to place at the start of all design names</PRE></td>
+</tr>
+<tr>
+<td>File prefix</td>
+<td><PRE>Name:         FilePrefix
+Default:       (&#60;functionof&#62; trimright [&#60;functionof&#62;] _)
+Values:       
+Enabled:      [&#60;functionof&#62; {![&#60;functionof&#62; [&#60;functionof&#62;] -attr 
+              PreventFilePrefix]}]
+
+Prefix all generated source files to avoid name conlicts if the directory hierarchy is flattend.</PRE></td>
+</tr>
+<tr>
+<td><font color="#808080">Macro prefix</font></td>
+<td><font color="#808080"><PRE>Name:         MacroPrefix
+Default:       (&#60;functionof&#62; trimright [&#60;functionof&#62;] _)
+Values:       
+Enabled:      [&#60;functionof&#62; {[&#60;functionof&#62; FilePrefix DesignPrefix]}]
+
+Prefix all macro's to avoid name conlicts.</PRE></font></td>
+</tr>
+</TABLE>
+
+<HR WIDTH="100%">
+<table COLS=2 WIDTH="100%" >
+  <tr>
+   <td><IMG SRC="./snpslogo.svg" ALT="Synopsys"></td>
+   <td><div align=right>coreConsultant</div></td>
+  </tr>
+</table>
+</BODY></HTML>
+

@@ -1,17 +1,3 @@
-`timescale 1ns/1ps
-
-`include "Data_Cache/L1_Data_Cache.v"
-`include "Data_Cache/L1_Data_Cache_Controller.v"
-
-`include "Data_Cache/L2_Data_Cache.v"
-`include "Data_Cache/L2_Data_Cache_Controller.v"
-
-`include "Data_Cache/L3_Data_Cache.v"
-`include "Data_Cache/L3_Data_Cache_Controller.v"
-
-//---------------------------
-//  大模組: Cache_Subsystem
-//---------------------------
 module Data_Cache #(
     // L1 參數
     parameter L1_DATA_LENGTH = 32,

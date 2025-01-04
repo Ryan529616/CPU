@@ -1,6 +1,6 @@
 module ALU_Sr2c_MUX (
     input  wire        ALU_Src,
-    input  wire  [1:0] FowardB,
+    input  wire  [1:0] ForwardB,
     input  wire [31:0] imm,
     input  wire [31:0] Read_data_2,
     input  wire [31:0] rd_data,
